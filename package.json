@@ -1,6 +1,7 @@
 {
   "name": "number-slayer",
   "version": "0.0.1",
+  "private": true,
   "description": "js/ts number utilities",
   "homepage": "https://github.com/Sinakhx/number-slayer#readme",
   "bugs": {
@@ -15,15 +16,21 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsup-node lib/index.ts --format esm,cjs --minify --dts",
     "prebuild": "npm run test",
+    "build": "tsup-node lib/index.ts --format esm,cjs --minify --dts",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "test": "jest",
-    "test:w": "jest --watch",
-    "test:c": "jest --coverage",
     "prepare": "husky install",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test": "jest",
+    "test:c": "jest --coverage",
+    "test:w": "jest --watch"
+  },
+  "lint-staged": {
+    "lib/*.ts": [
+      "eslint --fix .",
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "@babel/core": "*",
@@ -46,11 +53,5 @@
     "prettier": "^2.6.0",
     "tsup": "*",
     "typescript": "*"
-  },
-  "lint-staged": {
-    "lib/*.ts": [
-      "eslint --fix .",
-      "prettier --write"
-    ]
   }
 }
