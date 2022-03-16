@@ -20,6 +20,7 @@
     "build": "tsup-node lib/index.ts --format esm,cjs --minify --dts",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
+    "lint-staged": "lint-staged",
     "prepare": "husky install",
     "prepublishOnly": "npm run build",
     "test": "jest",

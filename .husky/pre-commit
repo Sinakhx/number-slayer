@@ -2,5 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 
 tsc
-npm run test
-npx --no-install lint-staged
+npm test
+npm run lint-staged
