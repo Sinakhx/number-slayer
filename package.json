@@ -1,11 +1,12 @@
 {
   "name": "number-slayer",
   "version": "0.0.1",
-  "description": "number utilities for js",
-  "main": "index.js",
+  "description": "js/ts number utilities",
+  "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsup-node lib/index.ts --format esm,cjs --minify --dts"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/Sinakhx/number-slayer/issues"
   },
-  "homepage": "https://github.com/Sinakhx/number-slayer#readme"
+  "homepage": "https://github.com/Sinakhx/number-slayer#readme",
+  "devDependencies": {
+    "tsup": "^5.12.1",
+    "typescript": "^4.6.2"
+  }
 }
