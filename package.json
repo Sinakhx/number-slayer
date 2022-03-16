@@ -1,57 +1,58 @@
 {
-  "name": "number-slayer",
-  "version": "0.1.0",
-  "private": true,
-  "description": "js/ts number utilities",
-  "homepage": "https://github.com/Sinakhx/number-slayer#readme",
-  "bugs": {
-    "url": "https://github.com/Sinakhx/number-slayer/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Sinakhx/number-slayer.git"
-  },
-  "license": "MIT",
-  "author": "Sina Khodabandehloo",
-  "type": "module",
-  "main": "dist/index.js",
-  "scripts": {
-    "prebuild": "npm run test",
-    "build": "tsup-node lib/index.ts --format esm,cjs --minify --dts",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "prepare": "husky install",
-    "prepublishOnly": "npm run build",
-    "test": "jest",
-    "test:c": "jest --coverage",
-    "test:w": "jest --watch"
-  },
-  "lint-staged": {
-    "lib/*.ts": [
-      "eslint --fix .",
-      "prettier --write"
-    ]
-  },
-  "devDependencies": {
-    "@babel/core": "*",
-    "@babel/preset-env": "*",
-    "@babel/preset-typescript": "*",
-    "@types/jest": "*",
-    "@typescript-eslint/eslint-plugin": "^5.15.0",
-    "@typescript-eslint/parser": "^5.15.0",
-    "babel-jest": "*",
-    "eslint": "^8.11.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^16.1.2",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jest": "^26.1.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^7.0.0",
-    "jest": "*",
-    "lint-staged": "^12.3.6",
-    "prettier": "^2.6.0",
-    "tsup": "*",
-    "typescript": "*"
-  }
+    "name": "number-slayer",
+    "version": "0.1.0",
+    "private": true,
+    "description": "js/ts number utilities",
+    "homepage": "https://github.com/Sinakhx/number-slayer#readme",
+    "bugs": {
+        "url": "https://github.com/Sinakhx/number-slayer/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Sinakhx/number-slayer.git"
+    },
+    "license": "MIT",
+    "author": "Sina Khodabandehloo",
+    "type": "module",
+    "main": "dist/index.js",
+    "scripts": {
+        "prebuild": "npm run test",
+        "build": "tsup-node lib/index.ts --format esm,cjs --minify --dts",
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix .",
+        "lint-staged": "lint-staged",
+        "prepare": "husky install",
+        "prepublishOnly": "npm run build",
+        "prettier": "prettier --write .",
+        "release": "standard-version",
+        "test": "jest",
+        "test:c": "jest --coverage",
+        "test:w": "jest --watch",
+        "typecheck": "tsc --noEmit"
+    },
+    "devDependencies": {
+        "@babel/core": "*",
+        "@babel/preset-env": "*",
+        "@babel/preset-typescript": "*",
+        "@commitlint/cli": "^16.2.3",
+        "@commitlint/config-conventional": "^16.2.1",
+        "@types/jest": "*",
+        "@typescript-eslint/eslint-plugin": "^5.15.0",
+        "@typescript-eslint/parser": "^5.15.0",
+        "babel-jest": "*",
+        "eslint": "^8.11.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-airbnb-typescript": "^16.1.2",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-jest": "^26.1.1",
+        "eslint-plugin-prettier": "^4.0.0",
+        "husky": "^7.0.0",
+        "jest": "*",
+        "lint-staged": "^12.3.6",
+        "prettier": "^2.6.0",
+        "standard-version": "^9.3.2",
+        "tsup": "*",
+        "typescript": "*"
+    }
 }

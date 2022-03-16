@@ -1,6 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-tsc --noEmit
-npm test
-npx --no-install lint-staged
+npm run typecheck
+npm run lint-staged
+npm run test
