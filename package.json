@@ -1,0 +1,20 @@
+{
+  "name": "number-slayer",
+  "version": "0.0.1",
+  "description": "number utilities for js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sinakhx/number-slayer.git"
+  },
+  "author": "Sina Khodabandehloo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sinakhx/number-slayer/issues"
+  },
+  "homepage": "https://github.com/Sinakhx/number-slayer#readme"
+}
