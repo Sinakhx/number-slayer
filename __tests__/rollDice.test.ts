@@ -1,4 +1,4 @@
-import { rollDice, rollDices } from '../lib';
+import { rollDice, rollMultipleDices } from '../lib';
 
 describe("A suite for the 'rollDice' module", () => {
     describe('rollDice', () => {
@@ -10,20 +10,20 @@ describe("A suite for the 'rollDice' module", () => {
             expect(rollDice()).toBeLessThanOrEqual(6);
         });
     });
-    describe('rollDices', () => {
+    describe('rollMultipleDices', () => {
         it('should return an Array of rolled dices', () => {
-            expect(Array.isArray(rollDices())).toBe(true);
-            expect(rollDices(4).length).toBe(4);
-            rollDices(4).forEach((dice) => {
+            expect(Array.isArray(rollMultipleDices())).toBe(true);
+            expect(rollMultipleDices(4).length).toBe(4);
+            rollMultipleDices(4).forEach((dice) => {
                 expect(dice).toBeGreaterThanOrEqual(1);
                 expect(dice).toBeLessThanOrEqual(6);
             });
         });
         it('should return an empty array if param is 0', () => {
-            expect(rollDices(0)?.length).toBe(0);
+            expect(rollMultipleDices(0)?.length).toBe(0);
         });
         it('should throw if param is a negative value', () => {
-            expect(() => rollDices(-2)).toThrowError();
+            expect(() => rollMultipleDices(-2)).toThrowError();
         });
     });
 });
