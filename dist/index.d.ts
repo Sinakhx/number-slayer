@@ -1,12 +1,17 @@
 /**
- * @returns a random dice value between 1 and 6
+ * to avoid +"0" === 0 && +undefined as NaN in accumulative calculations
+ * @param input to be counted in iterations
+ * @returns 1 if value is 0, else coerces the input value to a number
  */
-declare const rollDice: () => number;
+declare const countWithZeros: (input: unknown) => number;
+
 /**
- * @param count number of dices to roll (default: 1)
- * @returns array of rolled dices values
+ * returns positive remainders in modulus operations
+ * @param {number} dividend
+ * @param {number} divisor
+ * @return {number} positive modulus
  */
-declare const rollDices: (count?: number) => number[];
+declare const modulus: (dividend: number, divisor: number) => number;
 
 /**
  * @param min minimum possible integer
@@ -15,4 +20,14 @@ declare const rollDices: (count?: number) => number[];
  */
 declare const randomInteger: (min: number, max: number) => number;
 
-export { randomInteger, rollDice, rollDices };
+/**
+ * @returns a random dice value between 1 and 6
+ */
+declare const rollDice: () => number;
+/**
+ * @param count number of dices to roll (default: 1)
+ * @returns array of rolled dices values
+ */
+declare const rollMultipleDices: (count?: number) => number[];
+
+export { countWithZeros, modulus, randomInteger, rollDice, rollMultipleDices };
