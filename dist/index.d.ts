@@ -14,6 +14,15 @@ declare const countWithZeros: (input: unknown) => number;
 declare const modulus: (dividend: number, divisor: number) => number;
 
 /**
+ * creates an array of numbers from the starting number up to the ending number with defined step
+ * @param start starting number
+ * @param end ending number (inclusive)
+ * @param step step between numbers (default 1)
+ * @returns [start, start + step, ..., end]
+ */
+declare const numbersList: (start: number, end: number, step?: number) => number[];
+
+/**
  * @param min minimum possible integer
  * @param max maximum possible integer
  * @returns a random integer number between (and including) min & max values
@@ -30,4 +39,4 @@ declare const rollDice: () => number;
  */
 declare const rollMultipleDices: (count?: number) => number[];
 
-export { countWithZeros, modulus, randomInteger, rollDice, rollMultipleDices };
+export { countWithZeros, modulus, numbersList, randomInteger, rollDice, rollMultipleDices };
