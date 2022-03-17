@@ -3,4 +3,5 @@
 
 npm run typecheck
 npm run lint-staged
-npm run test
+npm run build
+git add dist/
