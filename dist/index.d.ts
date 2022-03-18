@@ -39,4 +39,13 @@ declare const rollDice: () => number;
  */
 declare const rollMultipleDices: (count?: number) => number[];
 
-export { countWithZeros, modulus, numbersList, randomInteger, rollDice, rollMultipleDices };
+/**
+ * padds a number with zeros (can be used for both the integer and decimal parts)
+ * @param num actual number to be padded with zeros
+ * @param int length of the desired string for the integer part of the number (defaults to 2)
+ * @param dec length of the desired string for the decimal part of the number
+ * @returns a string representation of the number with beggining &/or ending zeros
+ */
+declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined) => string;
+
+export { countWithZeros, modulus, numbersList, randomInteger, rollDice, rollMultipleDices, zeroPad };
