@@ -1,0 +1,23 @@
+# hidden config files
+.babelrc
+.eslintrc
+.versionrc
+.gitignore
+.npmignore
+.prettirerc
+.eslintignore
+.lintstagedrc
+.commitlintrc
+.prettireignore
+
+# json files
+tsconfig.json
+jest.config.json
+package-lock.json
+
+# directories
+lib
+.vscode
+.husky
+.github
+__tests__
