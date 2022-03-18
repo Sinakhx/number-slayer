@@ -17,5 +17,5 @@
         "import/prefer-default-export": "off",
         "max-len": "off"
     },
-    "ignorePatterns": ["node_modules/", "dist/"]
+    "ignorePatterns": ["node_modules/", "dist/", "__tests__"]
 }
