@@ -1,3 +1,4 @@
+export * from './addCommasToNumber';
 export * from './countWithZeros';
 export * from './isNumber';
 export * from './modulus';

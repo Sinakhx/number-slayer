@@ -1,4 +1,12 @@
 /**
+ * seperates a number with commas every three digits
+ * @param number number to add commas to
+ * @param delimiter delimiter to use between each group of digits (comma type)
+ * @returns a comma separated number
+ */
+declare const addCommasToNumber: (number: number | string, delimiter?: string) => string;
+
+/**
  * to avoid +"0" === 0 && +undefined as NaN in accumulative calculations
  * @param input to be counted in iterations
  * @returns 1 if value is 0, else coerces the input value to a number
@@ -63,4 +71,4 @@ declare const toPrecision: <T>(num: T, precision?: number | undefined) => number
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined) => string;
 
-export { countWithZeros, isNumber, modulus, numbersList, randomInteger, rollDice, rollMultipleDices, toPrecision, zeroPad };
+export { addCommasToNumber, countWithZeros, isNumber, modulus, numbersList, randomInteger, rollDice, rollMultipleDices, toPrecision, zeroPad };
