@@ -4,4 +4,5 @@ export * from './modulus';
 export * from './numbersList';
 export * from './randomInteger';
 export * from './rollDice';
+export * from './toPrecision';
 export * from './zeroPad';

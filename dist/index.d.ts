@@ -47,6 +47,14 @@ declare const rollDice: () => number;
 declare const rollMultipleDices: (count?: number) => number[];
 
 /**
+ * Rounds a number to the given precision decimals
+ * @param num - number or numberString
+ * @param precision - precision (decimals)
+ * @return - returns number to the given precision decimals. returns the same input if not number
+ */
+declare const toPrecision: <T>(num: T, precision?: number | undefined) => number | T;
+
+/**
  * padds a number with zeros (can be used for both the integer and decimal parts)
  * @param num actual number to be padded with zeros
  * @param int length of the desired string for the integer part of the number (defaults to 2)
@@ -55,4 +63,4 @@ declare const rollMultipleDices: (count?: number) => number[];
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined) => string;
 
-export { countWithZeros, isNumber, modulus, numbersList, randomInteger, rollDice, rollMultipleDices, zeroPad };
+export { countWithZeros, isNumber, modulus, numbersList, randomInteger, rollDice, rollMultipleDices, toPrecision, zeroPad };
