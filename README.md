@@ -32,13 +32,15 @@ This is a very tiny (~1kb) number-utilities library designed for TypeScript and 
 
 ## **Utils**
 - [addCommasToNumber](#addcommastonumber) - seperates a number by every 3 digits
-- [countWithZeros](#countwithzeros) - returns 1 if truthy or zero, else returns 0
+- [countWithZeros](#countwithzeros) - returns 1 if is number or truthy
+- [isNumber](#isnumber) - returns true if the argument is a real number
+- [modulus](#modulus) - returns the positive remainder of a division
 
---
+## Detailed Examples
 
 ### **addCommasToNumber**
 
-seperates a number with commas every three digits. the delimiter can be defined as a custom string as well.
+seperates the integer part of a number with commas every three digits. the delimiter can be defined as a custom string as well.
 
 ```ts
     import { addCommasToNumber } from 'number-slayer';
@@ -65,3 +67,53 @@ the return value of this function is either 1 or 0;
 
 **[⬆ back to top](#utils)**
 
+
+### **isNumber**
+
+checks if the given argument is a real number. returns true if the argument is a real number, false otherwise.
+
+```ts
+    import { isNumber } from 'number-slayer';
+
+    console.log(isNumber({})); // false
+    console.log(isNumber(-1.1)); // true
+    console.log(isNumber(undefined)); // false
+    console.log(isNumber(1 / Math.sqrt(Math.PI))); // true
+```
+
+**[⬆ back to top](#utils)**
+
+### **modulus**
+
+returns the positive remainder of a division, no matter the sign of the dividend.
+
+```ts
+    import { modulus } from 'number-slayer';
+
+    const simpleModulus = -5 % 3;                // -> -2
+    const numberSlayerModulus = modulus(-5, 3);  // ->  1
+    // 1 is the same as -2 + 3
+```
+
+**[⬆ back to top](#utils)**
+
+____________________________________
+### **Want More Examples?**
+see the [tests folder][tests-url] for more detailed examples.
+
+____________________________________
+### **Contributing**
+Please feel free to open an issue or create a pull request to add a new feature or fix a bug. (see [contributing][contribution-url] for more details)
+
+____________________________________
+
+## **License**
+
+The [MIT License][license-url] (MIT)
+
+&copy; (2021 - Present) Sina Khodabandehloo
+
+[tests-url]: https://github.com/Sinakhx/number-slayer/tree/main/__tests__ss
+[contribution-url]:  https://github.com/Sinakhx/number-slayer/blob/main/CONTRIBUTING.md
+[changelog-url]:  https://github.com/Sinakhx/number-slayer/blob/main/CHANGELOG.md
+[license-url]:  https://github.com/Sinakhx/number-slayer/blob/main/LICENSE
