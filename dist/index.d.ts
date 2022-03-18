@@ -6,6 +6,13 @@
 declare const countWithZeros: (input: unknown) => number;
 
 /**
+ * Checks if the given value is a real number. Supports Number object.
+ * @param val - value to check
+ * @returns true if value is a real number
+ */
+declare const isNumber: (val: any) => boolean;
+
+/**
  * returns positive remainders in modulus operations
  * @param {number} dividend
  * @param {number} divisor
@@ -48,4 +55,4 @@ declare const rollMultipleDices: (count?: number) => number[];
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined) => string;
 
-export { countWithZeros, modulus, numbersList, randomInteger, rollDice, rollMultipleDices, zeroPad };
+export { countWithZeros, isNumber, modulus, numbersList, randomInteger, rollDice, rollMultipleDices, zeroPad };
