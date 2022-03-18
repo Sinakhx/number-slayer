@@ -37,6 +37,9 @@ declare const modulus: (dividend: number, divisor: number) => number;
  */
 declare const numbersList: (start: number, end: number, step?: number) => number[];
 
+declare const enToFaNumber: (num: number | string) => string;
+declare const faToEnNumber: (num: number | string) => string;
+
 /**
  * @param min minimum possible integer
  * @param max maximum possible integer
@@ -71,4 +74,4 @@ declare const toPrecision: <T>(num: T, precision?: number | undefined) => number
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined) => string;
 
-export { addCommasToNumber, countWithZeros, isNumber, modulus, numbersList, randomInteger, rollDice, rollMultipleDices, toPrecision, zeroPad };
+export { addCommasToNumber, countWithZeros, enToFaNumber, faToEnNumber, isNumber, modulus, numbersList, randomInteger, rollDice, rollMultipleDices, toPrecision, zeroPad };
