@@ -9,11 +9,11 @@
             "section": "Bug Fixes"
         },
         {
-            "type": "chore",
-            "hidden": true
+            "type": "docs",
+            "section": "Documentation"
         },
         {
-            "type": "docs",
+            "type": "chore",
             "hidden": true
         },
         {
