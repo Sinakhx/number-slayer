@@ -1,5 +1,3 @@
-/* eslint-disable prefer-template */
-
 // conversion without regex
 const numbersFactory = () => {
     const numbers = (l: number) =>
