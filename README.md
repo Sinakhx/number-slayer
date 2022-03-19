@@ -259,7 +259,7 @@ The [MIT License][license-url] (MIT)
 
 &copy; (2021 - Present) Sina Khodabandehloo
 
-[tests-url]: https://github.com/Sinakhx/number-slayer/tree/main/__tests__ss
+[tests-url]: https://github.com/Sinakhx/number-slayer/tree/main/__tests__/
 [contribution-url]:  https://github.com/Sinakhx/number-slayer/blob/main/CONTRIBUTING.md
 [changelog-url]:  https://github.com/Sinakhx/number-slayer/blob/main/CHANGELOG.md
 [license-url]:  https://github.com/Sinakhx/number-slayer/blob/main/LICENSE
