@@ -16,6 +16,7 @@
         "react/jsx-filename-extension": "off",
         "import/prefer-default-export": "off",
         "prefer-template": "off",
+        "no-bitwise": "off",
         "max-len": "off",
         "indent": "off"
     },

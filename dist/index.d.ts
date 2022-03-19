@@ -7,6 +7,19 @@
 declare const addCommasToNumber: (number: number | string, delimiter?: string) => string;
 
 /**
+ * converts an integer number to binary
+ * @param bin binary string of a number to be converted to integer
+ * @returns integer value of the binary string
+ */
+declare const int: (bin: string) => number;
+/**
+ * converts a binary number to integer
+ * @param num integer number to be converted to binary
+ * @returns the binary version of a specified integer
+ */
+declare const bin: (num: number) => string;
+
+/**
  * to avoid +"0" === 0 && +undefined as NaN in accumulative calculations
  * @param input to be counted in iterations
  * @returns 1 if value is 0, else coerces the input value to a number
@@ -75,4 +88,4 @@ declare const toPrecision: <T>(num: T, precision?: number | undefined) => number
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined) => string;
 
-export { addCommasToNumber, countWithZeros, enToFaNumber, faToEnNumber, isNumber, modulus, numbersList, randomInteger, rollDice, rollMultipleDices, toFaPercent, toPrecision, zeroPad };
+export { addCommasToNumber, bin, countWithZeros, enToFaNumber, faToEnNumber, int, isNumber, modulus, numbersList, randomInteger, rollDice, rollMultipleDices, toFaPercent, toPrecision, zeroPad };
