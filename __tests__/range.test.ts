@@ -16,7 +16,10 @@ describe("A suite for the 'range' module", () => {
         expect(range(9, 7, 2)).toEqual([]);
     });
     it('should return an array of numbers from the starting number up to the ending number with defined step', () => {
-        expect(range(1, 5)).toEqual([1, 2, 3, 4, 5]);
+        expect(range(1, 5)).toEqual([1, 2, 3, 4]);
+        expect(range(1, 5.5)).toEqual([1, 2, 3, 4, 5]);
+        expect(range(1, 1)).toEqual([]);
+        expect(range(1, 2)).toEqual([1]);
         expect(range(-2, 18, 3)).toEqual([-2, 1, 4, 7, 10, 13, 16]);
     });
     it('should return an empty array for negative step values', () => {
