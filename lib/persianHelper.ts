@@ -1,49 +1,38 @@
-type NumbersDict = Readonly<Record<string, string>>;
+/* eslint-disable prefer-template */
 
 // conversion without regex
 const numbersFactory = () => {
-    const faToEnDict: NumbersDict = {
-        '۰': '0',
-        '۱': '1',
-        '۲': '2',
-        '۳': '3',
-        '۴': '4',
-        '۵': '5',
-        '۶': '6',
-        '۷': '7',
-        '۸': '8',
-        '۹': '9',
-    };
-    const enToFaDict: NumbersDict = {
-        0: '۰',
-        1: '۱',
-        2: '۲',
-        3: '۳',
-        4: '۴',
-        5: '۵',
-        6: '۶',
-        7: '۷',
-        8: '۸',
-        9: '۹',
-    };
+    const numbers = (l: number) =>
+        Object.fromEntries(
+            Array(10)
+                .fill(0)
+                .map((_, i) => {
+                    const j = i + '';
+                    const p = String.fromCharCode(j.charCodeAt(0) + 1728);
+                    return l === 0 ? [j, p] : [p, j];
+                }),
+        );
+    const faToEnDict: Record<string, string> = numbers(1);
+    const enToFaDict: Record<string, string> = numbers(0);
+
+    const convert =
+        (dict: Record<string, string>) =>
+        (num: number | string): string =>
+            `${num}`
+                .split('')
+                .map((n) => dict[n] || n)
+                .join('');
 
     return {
-        enToFaNumber: (num: number | string): string =>
-            `${num}`
-                .split('')
-                .map((n) => enToFaDict[n] || n)
-                .join(''),
-        faToEnNumber: (num: number | string): string =>
-            `${num}`
-                .split('')
-                .map((n) => faToEnDict[n] || n)
-                .join(''),
+        enToFaNumber: convert(enToFaDict),
+        faToEnNumber: convert(faToEnDict),
     };
 };
 
 export const { enToFaNumber, faToEnNumber } = numbersFactory();
 
 export const toFaPercent = (number: number | string): string => {
-    const result = `٪ ${number >= 0 ? enToFaNumber(number) : `${enToFaNumber(Math.abs(+number))}-`}`;
-    return result === '٪ -۰' ? '٪ ۰' : result;
+    const p = '٪ ';
+    const result = number >= 0 ? enToFaNumber(number) : enToFaNumber(Math.abs(+number)) + '-';
+    return result === '-۰' ? p + '۰' : p + result;
 };
