@@ -15,7 +15,8 @@
     "rules": {
         "react/jsx-filename-extension": "off",
         "import/prefer-default-export": "off",
-        "max-len": "off"
+        "max-len": "off",
+        "indent": "off"
     },
     "ignorePatterns": ["node_modules/", "dist/", "__tests__"]
 }
