@@ -7,7 +7,7 @@ This is a very tiny (~1kb) number-utilities library designed for TypeScript and 
 ### **number-slayer**:
 - has no dependencies
 - is written in TypeScript
-- is lightweight (< 1kb gzipped)
+- is lightweight (~1kb gzipped)
 - supports both ESM and CJS outputs
 - is compatible with both Node.js and browsers
 - is modular, functional, tree-shakable and easy to use
@@ -30,11 +30,25 @@ This is a very tiny (~1kb) number-utilities library designed for TypeScript and 
     console.log(formattedNumber); // '1,234,567,890'
 ```
 
-## **Utils**
+## **Quick Guide**
 - [addCommasToNumber](#addcommastonumber) - seperates a number by every 3 digits
-- [countWithZeros](#countwithzeros) - returns 1 if is number or truthy
+- [countWithZeros](#countwithzeros) - returns 1 if the argument is number or truthy
 - [isNumber](#isnumber) - returns true if the argument is a real number
 - [modulus](#modulus) - returns the positive remainder of a division
+- [randomInt](#randomint) - returns a random integer between (& including) two numbers
+- [range](#range) - creates a list of numbers from a start to an end with a step
+- [toPrecision](#toprecision) - rounds a number to a specific number of decimal places
+- [zeroPad](#zeropad) - pads a number with leading or trailing zeros of a specific length
+- ***Binary conversion utils***
+    + [int](#int) - converts a binary number to integer
+    + [bin](#bin) - converts an integer number to binary
+- ***Persian language helper utils*** - number helper utils for the Persian language
+    + [faToEnNumber](#fatoennumber) - converts a Persian number to English `(e.g. '۱۲۳' to '123')`
+    + [enToFaNumber](#entofanumber) - converts an English number to Persian `(e.g. '123' to '۱۲۳')`
+    + [toFaPercent](#tofapercent) - converts a number to Persian percent `(e.g. '50' to '٪ ۵۰')`
+- ***Fun utils***
+    + [rollDice](#rolldice) - returns a random dice number 🎲
+    + [rollMultipleDices](#rollmultipledices) - returns a series of random dice numbers 🎲🎲🎲🎲
 
 ## Detailed Examples
 
@@ -49,7 +63,7 @@ seperates the integer part of a number with commas every three digits. the delim
     const n2 = addCommasToNumber(-5589.43, "'") // -> "-5'589.43"
 ```
 
-**[⬆ back to top](#utils)**
+**[⬆ back to top](#quick-guide)**
 
 ### **countWithZeros**
 
@@ -65,8 +79,7 @@ the return value of this function is either 1 or 0;
     // the 5 values counted are: 0, "0", 6, "345", "-12"
 ```
 
-**[⬆ back to top](#utils)**
-
+**[⬆ back to top](#quick-guide)**
 
 ### **isNumber**
 
@@ -81,7 +94,7 @@ checks if the given argument is a real number. returns true if the argument is a
     console.log(isNumber(1 / Math.sqrt(Math.PI))); // true
 ```
 
-**[⬆ back to top](#utils)**
+**[⬆ back to top](#quick-guide)**
 
 ### **modulus**
 
@@ -95,7 +108,140 @@ returns the positive remainder of a division, no matter the sign of the dividend
     // 1 is the same as -2 + 3
 ```
 
-**[⬆ back to top](#utils)**
+**[⬆ back to top](#quick-guide)**
+
+### **randomInt**
+
+returns a random integer number between (and including) the given `min` & `max` values
+
+```ts
+    import { randomInt } from 'number-slayer';
+
+    console.log(randomInt(1, 10)); // random number between 1 and 10. e.g. 5
+    console.log(randomInt(10, 1)); // is the same as randomInt(1, 10)
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **range**
+
+creates an array of numbers from the starting number up to the ending number (exclusive) with arbitrary step (default is 1).
+
+```ts
+    import { range } from 'number-slayer';
+
+    const numbers = range(3, 10);     //-> [3, 4, 5, 6, 7, 8, 9]
+    const numbers2 = range(25, 32, 2); //-> [25, 27, 29, 31]
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **toPrecision**
+
+rounds a number to the given precision decimals.
+also returns non-numeric values as they are without returning `NaN` stuff or throwing errors.
+
+```ts
+    import { toPrecision } from 'number-slayer';
+
+    console.log(toPrecision('foo')); // 'foo'
+    console.log(toPrecision(5.2341)); // 5.2341
+    console.log(toPrecision(48.23416789, 3)); // 48.234
+```
+
+> **NOTE:** JavaScript has a similar method: [toPrecision](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision), which doesn't work like this.
+
+**[⬆ back to top](#quick-guide)**
+
+### **zeroPad**
+
+pads a number with leading or trailing zeros of a specific length (can be used for both the integer and decimal parts).
+
+```ts
+    import { zeroPad } from 'number-slayer';
+    
+    console.log(zeroPad(1)); // '01'
+    console.log(zeroPad(1, 3)); // '001'
+    console.log(zeroPad(1, 3, 2)); // '001.00'
+    console.log(zeroPad(-47.8, 3, 2)); // '-047.80'
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### Binary conversion utils
+
+### **int**
+
+converts a binary number to integer. 👇🏻
+### **bin**
+
+converts an integer number to binary (the result will always start with the prefix `0b`. this is similar to Python's `bin` function).
+
+```ts
+    import { int, bin } from 'number-slayer';
+
+    console.log(int('100100')); // 36
+    console.log(int('0b100100')); // 36
+    console.log(bin(36)); // '0b100100'
+    console.log(bin(-36)); // '-0b100100'
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### Persian language helper utils
+
+### **faToEnNumber**
+converts a Persian number to English (ignores non-numeric characters).
+
+```ts
+    import { faToEnNumber } from 'number-slayer';
+
+    console.log(faToEnNumber('۱۲۳۴۵۶۷۸۹۰')); // '1234567890'
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **enToFaNumber**
+converts an English number to Persian (ignores non-numeric characters).
+
+```ts
+    import { enToFaNumber } from 'number-slayer';
+
+    console.log(enToFaNumber(1234567890)); // '۱۲۳۴۵۶۷۸۹۰'
+    console.log(enToFaNumber('He knows -25.48 is -۲۵.۴۸')); // 'He knows -25.48 is -25.48'
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **toFaPercent**
+converts a number to Persian percent.
+
+```ts
+    import { toFaPercent } from 'number-slayer';
+
+    console.log(toFaPercent(50)); // '٪ ۵۰'
+```
+
+**[⬆ back to top](#quick-guide)**
+
+
+### Fun utils
+
+### **rollDice**
+
+returns a random 🎲 number (`1` to `6`) 👇🏻
+### **rollMultipleDices**
+
+returns an array of random dice numbers 🎲🎲🎲🎲🎲... (takes the number of dices as an argument)
+
+```ts
+    import { rollDice, rollMultipleDices } from 'number-slayer';
+
+    console.log(rollDice()); // a random dice number: e.g. 6
+    console.log(rollMultipleDices(4)); // a list of random dice numbers: e.g. [4, 1, 6, 3]
+```
+
+**[⬆ back to top](#quick-guide)**
 
 ____________________________________
 ### **Want More Examples?**
