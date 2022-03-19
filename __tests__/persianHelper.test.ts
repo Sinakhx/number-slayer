@@ -1,4 +1,4 @@
-import { faToEnNumber, enToFaNumber } from '../lib';
+import { faToEnNumber, enToFaNumber, toFaPercent } from '../lib';
 
 describe("A suite for the 'persianHelper' module", () => {
     describe("tests for the 'faToEnNumber' util", () => {
@@ -27,6 +27,13 @@ describe("A suite for the 'persianHelper' module", () => {
             expect(faToEnNumber("It's ۲۵۰۰۰ Toman")).toBe("It's 25000 Toman");
             expect(enToFaNumber("It's 25000 Toman")).toBe("It's ۲۵۰۰۰ Toman");
             expect(faToEnNumber('He knows -25.48 is -۲۵.۴۸')).toBe('He knows -25.48 is -25.48');
+        });
+    });
+    describe("tests for the 'toFaPercent' util", () => {
+        it('should convert English numbers to Persian numbers', () => {
+            expect(toFaPercent(50)).toBe('٪ ۵۰');
+            expect(toFaPercent('-0')).toBe('٪ ۰');
+            expect(toFaPercent('-0.23')).toBe('٪ ۰.۲۳-'); // 🤔 should be checked in RTL rendering
         });
     });
 });

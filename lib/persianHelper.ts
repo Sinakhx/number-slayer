@@ -42,3 +42,8 @@ const numbersFactory = () => {
 };
 
 export const { enToFaNumber, faToEnNumber } = numbersFactory();
+
+export const toFaPercent = (number: number | string): string => {
+    const result = `٪ ${number >= 0 ? enToFaNumber(number) : `${enToFaNumber(Math.abs(+number))}-`}`;
+    return result === '٪ -۰' ? '٪ ۰' : result;
+};
