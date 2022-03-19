@@ -41,6 +41,17 @@ declare const isNumber: (val: any) => boolean;
  */
 declare const modulus: (dividend: number, divisor: number) => number;
 
+declare const enToFaNumber: (num: number | string) => string;
+declare const faToEnNumber: (num: number | string) => string;
+declare const toFaPercent: (number: number | string) => string;
+
+/**
+ * @param min minimum possible integer (inclusive)
+ * @param max maximum possible integer (inclusive)
+ * @returns a random integer number between (and including) min & max values
+ */
+declare const randomInt: (min: number, max: number) => number;
+
 /**
  * creates an array of numbers from the starting number up to the ending number with defined step
  * @param start starting number
@@ -48,18 +59,7 @@ declare const modulus: (dividend: number, divisor: number) => number;
  * @param step step between numbers (default 1)
  * @returns [start, start + step, ..., end]
  */
-declare const numbersList: (start: number, end: number, step?: number) => number[];
-
-declare const enToFaNumber: (num: number | string) => string;
-declare const faToEnNumber: (num: number | string) => string;
-declare const toFaPercent: (number: number | string) => string;
-
-/**
- * @param min minimum possible integer
- * @param max maximum possible integer
- * @returns a random integer number between (and including) min & max values
- */
-declare const randomInteger: (min: number, max: number) => number;
+declare const range: (start: number, end: number, step?: number) => number[];
 
 /**
  * @returns a random dice value between 1 and 6
@@ -88,4 +88,4 @@ declare const toPrecision: <T>(num: T, precision?: number | undefined) => number
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined) => string;
 
-export { addCommasToNumber, bin, countWithZeros, enToFaNumber, faToEnNumber, int, isNumber, modulus, numbersList, randomInteger, rollDice, rollMultipleDices, toFaPercent, toPrecision, zeroPad };
+export { addCommasToNumber, bin, countWithZeros, enToFaNumber, faToEnNumber, int, isNumber, modulus, randomInt, range, rollDice, rollMultipleDices, toFaPercent, toPrecision, zeroPad };
