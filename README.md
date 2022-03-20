@@ -1,4 +1,9 @@
 # **number-slayer**
+![npm](https://img.shields.io/npm/v/number-slayer?color=%239f9f9f&style=flat-square)
+![license](https://img.shields.io/npm/l/number-slayer?color=red&style=flat-square)
+![tests](https://img.shields.io/badge/tests-100%25-green?style=flat-square)
+![types](https://img.shields.io/npm/types/number-slayer?style=flat-square)
+
 
 ## **About**
 
