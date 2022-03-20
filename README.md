@@ -5,6 +5,23 @@
 ![types](https://img.shields.io/npm/types/number-slayer?style=flat-square)
 
 
+## **At a glance**
+```js
+    addCommasToNumber(-43000000.25)   // -->   '-43,000,000.25'
+    toPrecision(3.141592653589793, 3) // -->   3.142
+    enToFaNumber(1234567890)          // -->   '۱۲۳۴۵۶۷۸۹۰'
+    range(7, 22, 3)                   // -->   [7, 10, 13, 16, 19]
+    zeroPad(4, 2, 3)                  // -->   '04.000'
+    isNumber(98.3)                    // -->   true
+    modulus(-5, 3)                    // -->   1
+    randomInt(79, 83)                 // -->   82
+    toFaPercent(47)                   // -->   '٪ ۴۷'
+    bin(-36)                          // -->   '-0b100100'
+    int('-0b100100')                  // -->   -36
+    // ...
+```
+
+
 ## **About**
 
 This is a very tiny (~1kb) number-utilities library designed for TypeScript and JavaScript projects. It is a collection of functions that are used to perform common daily tasks with numbers, including numbers generation (both random and non-random), rounding to a specific number of decimal places, converting numbers to formatted strings, etc.
@@ -32,9 +49,8 @@ This is a very tiny (~1kb) number-utilities library designed for TypeScript and 
     // or if you are using commonjs:
     // const addCommasToNumber = require('number-slayer/dist/index.cjs').addCommasToNumber;
 
-    const number = 1234567890;
-    const formattedNumber = addCommasToNumber(number);
-    console.log(formattedNumber); // '1,234,567,890'
+    const number = addCommasToNumber(1234567890);
+    console.log(number); // -->   '1,234,567,890'
 ```
 
 ## **Quick Guide**
