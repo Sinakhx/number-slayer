@@ -29,6 +29,8 @@ This is a very tiny (~1kb) number-utilities library designed for TypeScript and 
 
 ```ts
     import { addCommasToNumber } from 'number-slayer';
+    // or if you are using commonjs:
+    // const addCommasToNumber = require('number-slayer/dist/index.cjs').addCommasToNumber;
 
     const number = 1234567890;
     const formattedNumber = addCommasToNumber(number);
