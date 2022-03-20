@@ -4,11 +4,11 @@
 .versionrc
 .gitignore
 .npmignore
-.prettirerc
+.prettierrc
 .eslintignore
 .lintstagedrc
 .commitlintrc
-.prettireignore
+.prettierignore
 
 # json files
 tsconfig.json
@@ -21,3 +21,5 @@ lib
 .husky
 .github
 __tests__
+
+CONTRIBUTING.md
