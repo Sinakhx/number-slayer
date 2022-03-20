@@ -73,10 +73,9 @@ the return value of this function is either 1 or 0;
 ```ts
     import { countWithZeros } from 'number-slayer';
 
-    const myArray = [null, undefined, 0, "0", 6, "345", "-12", ""];
-    const count = myArray.reduce(countWithZeros, 0);
-    console.log(count); // 5
-    // the 5 values counted are: 0, "0", 6, "345", "-12"
+    const mixedArray = [null, undefined, 0, "0", 6, "345", "-12", ""];
+    const passList = mixedArray.filter(countWithZeros); // -> [0, "0", 6, "345", "-12"]
+    console.log(passList.length); // 5
 ```
 
 **[⬆ back to top](#quick-guide)**
