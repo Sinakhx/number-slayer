@@ -18,4 +18,10 @@ describe("A suite for the 'countWithZeros' module", () => {
         expect(countWithZeros({})).toBe(1);
         expect(countWithZeros(() => {})).toBe(1);
     });
+    it('should count numeric values', () => {
+        const mixedArray = [null, undefined, 0, '0', 6, '345', '-12', ''];
+        const passList = mixedArray.filter(countWithZeros);
+        expect(passList).toEqual([0, '0', 6, '345', '-12']);
+        expect(passList.length).toBe(5);
+    });
 });
