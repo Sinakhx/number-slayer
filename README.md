@@ -219,6 +219,7 @@ converts a Persian number to English (ignores non-numeric characters).
     import { faToEnNumber } from 'number-slayer';
 
     console.log(faToEnNumber('۱۲۳۴۵۶۷۸۹۰')); // '1234567890'
+    console.log(faToEnNumber('He knows -25.48 is -۲۵.۴۸')); // 'He knows -25.48 is -25.48'
 ```
 
 **[⬆ back to top](#quick-guide)**
@@ -229,8 +230,8 @@ converts an English number to Persian (ignores non-numeric characters).
 ```ts
     import { enToFaNumber } from 'number-slayer';
 
-    console.log(enToFaNumber(1234567890)); // '۱۲۳۴۵۶۷۸۹۰'
-    console.log(enToFaNumber('He knows -25.48 is -۲۵.۴۸')); // 'He knows -25.48 is -25.48'
+    console.log(enToFaNumber(-123.66)); // '-۱۲۳.۶۶'
+    console.log(enToFaNumber('مبلغ 25000 تومان')); // 'مبلغ ۲۵۰۰۰ تومان'
 ```
 
 **[⬆ back to top](#quick-guide)**
