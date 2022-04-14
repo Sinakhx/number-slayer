@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/Sinakhx/number-slayer/compare/v1.0.2...v1.0.3) (2022-04-14)
+
+
+### Features
+
+* countIntDigits ([62fad73](https://github.com/Sinakhx/number-slayer/commit/62fad73268238aa90717780171c267b0ee78dcc1))
+* isBigNumber ([6678706](https://github.com/Sinakhx/number-slayer/commit/667870605197c266afea562c30c94a6ea842e04d))
+* roundThousands ([6119649](https://github.com/Sinakhx/number-slayer/commit/61196490bf9fff9db6f41f43d5bc4a5c831eaa98))
+
+
+### Documentation
+
+* countIntDigits, isBigNumber, roundThousands ([3f18b5a](https://github.com/Sinakhx/number-slayer/commit/3f18b5aee92d8892d6963ceb4820f8128942b0f1))
+* **fix:** persian utils examples ([d4db01d](https://github.com/Sinakhx/number-slayer/commit/d4db01dacee88a7afa51c8eb6320f5bb46379a02))
+
 ### [1.0.2](https://github.com/Sinakhx/number-slayer/compare/v1.0.1...v1.0.2) (2022-03-20)
 
 
