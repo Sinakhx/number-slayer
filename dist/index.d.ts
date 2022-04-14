@@ -27,6 +27,8 @@ declare const bin: (num: number) => string;
  */
 declare const countWithZeros: (input: unknown) => number;
 
+declare const isBigNumber: (num: number) => boolean;
+
 /**
  * Checks if the given value is a real number. Supports Number object.
  * @param val - value to check
@@ -89,4 +91,4 @@ declare const toPrecision: <T>(num: T, precision?: number | undefined) => number
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined) => string;
 
-export { addCommasToNumber, bin, countWithZeros, enToFaNumber, faToEnNumber, int, isNumber, modulus, randomInt, range, rollDice, rollMultipleDices, toFaPercent, toPrecision, zeroPad };
+export { addCommasToNumber, bin, countWithZeros, enToFaNumber, faToEnNumber, int, isBigNumber, isNumber, modulus, randomInt, range, rollDice, rollMultipleDices, toFaPercent, toPrecision, zeroPad };

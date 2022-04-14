@@ -15,8 +15,10 @@
     "rules": {
         "react/jsx-filename-extension": "off",
         "import/prefer-default-export": "off",
+        "@typescript-eslint/indent": "off",
         "prefer-template": "off",
         "no-bitwise": "off",
+        "no-tabs": "off",
         "max-len": "off",
         "indent": "off"
     },

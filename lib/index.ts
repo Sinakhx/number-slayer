@@ -1,6 +1,7 @@
 export * from './addCommasToNumber';
 export * from './binary';
 export * from './countWithZeros';
+export * from './isBigNumber';
 export * from './isNumber';
 export * from './modulus';
 export * from './persianHelper';
