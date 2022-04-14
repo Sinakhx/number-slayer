@@ -13,6 +13,10 @@
 # json files
 tsconfig.json
 jest.config.json
+
+# lock files
+yarn.lock
+pnpm-lock.yaml
 package-lock.json
 
 # directories
