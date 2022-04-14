@@ -20,6 +20,12 @@ declare const int: (bin: string) => number;
 declare const bin: (num: number) => string;
 
 /**
+ * returns the number of digits in the integer part of a number
+ * @param num the number to count the digits of
+ */
+declare const countIntDigits: (num: number) => number;
+
+/**
  * finds numbers and truthy values
  * (to avoid +undefined as NaN count zeros as well in accumulative calculations)
  * @param input to be counted in iterations
@@ -27,6 +33,11 @@ declare const bin: (num: number) => string;
  */
 declare const countWithZeros: (input: unknown) => number;
 
+/**
+ * checks if the number is out of +-MAX_SAFE_INTEGER bounds
+ * @param num number
+ * @returns true if the number is too big
+ */
 declare const isBigNumber: (num: number) => boolean;
 
 /**
@@ -74,6 +85,16 @@ declare const rollDice: () => number;
  */
 declare const rollMultipleDices: (count?: number) => number[];
 
+declare type Format = 'round' | 'floor' | 'ceil';
+/**
+ * rounds a real number to a certain multiple of 10
+ * @param num number to be rounded
+ * @param precision number of digits from left not to be rounded (default: 1)
+ * @param format "round" | "floor" | "ceil" (default: "round")
+ * @returns rounded number
+ */
+declare const roundThousands: (num: number, precision?: number, format?: Format) => number;
+
 /**
  * Rounds a number to the given precision decimals
  * @param num - number or numberString
@@ -91,4 +112,4 @@ declare const toPrecision: <T>(num: T, precision?: number | undefined) => number
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined) => string;
 
-export { addCommasToNumber, bin, countWithZeros, enToFaNumber, faToEnNumber, int, isBigNumber, isNumber, modulus, randomInt, range, rollDice, rollMultipleDices, toFaPercent, toPrecision, zeroPad };
+export { addCommasToNumber, bin, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, int, isBigNumber, isNumber, modulus, randomInt, range, rollDice, rollMultipleDices, roundThousands, toFaPercent, toPrecision, zeroPad };

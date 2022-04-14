@@ -3,8 +3,8 @@ import { countIntDigits } from './countIntDigits';
 type Format = 'round' | 'floor' | 'ceil';
 
 /**
- * rounds a big number to a certain power of 10
- * @param num big number to be rounded
+ * rounds a real number to a certain multiple of 10
+ * @param num number to be rounded
  * @param precision number of digits from left not to be rounded (default: 1)
  * @param format "round" | "floor" | "ceil" (default: "round")
  * @returns rounded number

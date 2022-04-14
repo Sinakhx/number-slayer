@@ -7,14 +7,16 @@
 
 ## **At a glance**
 ```js
-    addCommasToNumber(-43000000.25)   // -->   '-43,000,000.25'
-    toPrecision(3.141592653589793, 3) // -->   3.142
-    enToFaNumber(1234567890)          // -->   '۱۲۳۴۵۶۷۸۹۰'
     range(7, 22, 3)                   // -->   [7, 10, 13, 16, 19]
+    toPrecision(3.141592653589793, 3) // -->   3.142
     zeroPad(4, 2, 3)                  // -->   '04.000'
+    randomInt(79, 83)                 // -->   82
+    addCommasToNumber(-43000000.25)   // -->   '-43,000,000.25'
+    roundThousands(27743000.21)       // -->   30000000
+    countIntDigits(123456789)         // -->   9
+    enToFaNumber(1234567890)          // -->   '۱۲۳۴۵۶۷۸۹۰'
     isNumber(98.3)                    // -->   true
     modulus(-5, 3)                    // -->   1
-    randomInt(79, 83)                 // -->   82
     toFaPercent(47)                   // -->   '٪ ۴۷'
     bin(-36)                          // -->   '-0b100100'
     int('-0b100100')                  // -->   -36
@@ -24,12 +26,12 @@
 
 ## **About**
 
-This is a very tiny (~1kb) number-utilities library designed for TypeScript and JavaScript projects. It is a collection of functions that are used to perform common daily tasks with numbers, including numbers generation (both random and non-random), rounding to a specific number of decimal places, converting numbers to formatted strings, etc.
+This is a very tiny tree-shakable number-utilities library designed for TypeScript and JavaScript projects. It is a collection of functions that are used to perform common daily tasks with numbers, including numbers generation (both random and non-random), rounding to a specific number of decimal places, converting numbers to formatted strings, etc.
 
 ### **number-slayer**:
 - has no dependencies
 - is written in TypeScript
-- is lightweight (~1kb gzipped)
+- is lightweight (<2kb gzipped)
 - supports both ESM and CJS outputs
 - is compatible with both Node.js and browsers
 - is modular, functional, tree-shakable and easy to use
@@ -55,11 +57,14 @@ This is a very tiny (~1kb) number-utilities library designed for TypeScript and 
 
 ## **Quick Guide**
 - [addCommasToNumber](#addcommastonumber) - seperates a number by every 3 digits
+- [countIntDigits](#countintdigits) - returns the number of digits in the integer part of a number
 - [countWithZeros](#countwithzeros) - returns 1 if the argument is number or truthy
+- [isBigNumber](#isbignumber) - returns true if the argument number out of the bounds of +-Number.MAX_SAFE_INTEGER
 - [isNumber](#isnumber) - returns true if the argument is a real number
 - [modulus](#modulus) - returns the positive remainder of a division
 - [randomInt](#randomint) - returns a random integer between (& including) two numbers
 - [range](#range) - creates a list of numbers from a start to an end with a step
+- [roundThousands](#roundthousands) - rounds a real number to a certain multiple of 10
 - [toPrecision](#toprecision) - rounds a number to a specific number of decimal places
 - [zeroPad](#zeropad) - pads a number with leading or trailing zeros of a specific length
 - ***Binary conversion utils***
@@ -88,6 +93,19 @@ seperates the integer part of a number with commas every three digits. the delim
 
 **[⬆ back to top](#quick-guide)**
 
+### **countIntDigits**
+
+returns the number of digits in the integer part of a number
+
+```ts
+    import { countIntDigits } from 'number-slayer';
+
+    const n = countIntDigits(-198989.999);
+    console.log(n);   // -> 6
+```
+
+**[⬆ back to top](#quick-guide)**
+
 ### **countWithZeros**
 
 can be used as a callback function when trying to count digits and truthy values in an array (counts zero as well).
@@ -99,6 +117,19 @@ the return value of this function is either 1 or 0;
     const mixedArray = [null, undefined, 0, "0", 6, "345", "-12", ""];
     const passList = mixedArray.filter(countWithZeros); // -> [0, "0", 6, "345", "-12"]
     console.log(passList.length); // 5
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **isBigNumber**
+
+checks if the number is out of +-MAX_SAFE_INTEGER bounds. returns true if the argument number is too big for calculations.
+
+```ts
+    import { isBigNumber } from 'number-slayer';
+
+    isBigNumber(Number.MIN_SAFE_INTEGER - 1); // -> true
+    isBigNumber(9100000000000000);            // -> true
 ```
 
 **[⬆ back to top](#quick-guide)**
@@ -154,6 +185,23 @@ creates an array of numbers from the starting number up to the ending number (ex
 
     const numbers = range(3, 10);     //-> [3, 4, 5, 6, 7, 8, 9]
     const numbers2 = range(25, 32, 2); //-> [25, 27, 29, 31]
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **roundThousands**
+
+rounds a real number to a certain multiple of 10.
+it takes three arguements:
+ - `num` ***(required)*** number to be rounded
+ - `precision` ***(optional. default: 1)*** number of digits from left not to be rounded/floored/ceild
+ - `format` ***(optional. default: "round")*** number-cutting strategy. can be: `"round" | "floor" | "ceil"
+`
+```ts
+    import { roundThousands } from 'number-slayer';
+
+    roundThousands(1462621.12158);             // -> 1000000
+    roundThousands(1462621.12158, 3, 'ceil');  // -> 1470000
 ```
 
 **[⬆ back to top](#quick-guide)**
