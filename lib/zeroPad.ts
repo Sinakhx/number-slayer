@@ -6,14 +6,11 @@
  * @returns a string representation of the number with beggining &/or ending zeros
  */
 export const zeroPad = (num: number | string, int: number = 2, dec?: number): string => {
-    let number = `${num}`;
+    const number = `${num}`;
     const sign = number[0] === '-' || number[0] === '+' ? number[0] : '';
-    if (sign) {
-        number = number.substring(1);
-    }
-    const [intPart, decPart] = number.split('.');
+    const [intPart, decPart] = `${Math.abs(+num)}`.split('.');
     const left = sign + intPart.padStart(int, '0');
-    const right = decPart ? `.${decPart.padEnd(dec || decPart.length, '0')}` : '';
-
+    const decimal = dec ? `.${'0'.repeat(dec)}` : '';
+    const right = decPart ? `.${decPart.padEnd(dec || decPart.length, '0')}` : decimal;
     return left + right;
 };

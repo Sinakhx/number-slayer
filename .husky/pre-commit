@@ -5,3 +5,4 @@ npm run typecheck
 npm run lint-staged
 npm run build
 git add dist/
+git add pnpm-lock.yaml
