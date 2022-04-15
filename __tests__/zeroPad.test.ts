@@ -74,4 +74,23 @@ describe("A suite for the 'zeroPad' module", () => {
         expect(zeroPad('-0.004', 0, 4)).toBe('-0.0040');
         expect(zeroPad('-1.00400', 1, 4)).toBe('-1.0040');
     });
+
+    it('should support the "addSign" option correctly', () => {
+        expect(zeroPad(-129.33, 0, 0, true)).toBe('-129.33');
+        expect(zeroPad(+129.33, 0, 0, true)).toBe('+129.33');
+        expect(zeroPad(129.33, 0, 0, true)).toBe('+129.33');
+        expect(zeroPad('-129.33', 0, 0, true)).toBe('-129.33');
+        expect(zeroPad('+129.33', 0, 0, true)).toBe('+129.33');
+        expect(zeroPad('129.33', 0, 0, true)).toBe('+129.33');
+        expect(zeroPad(-129.33, 0, 0, false)).toBe('-129.33');
+        expect(zeroPad(+129.33, 0, 0, false)).toBe('129.33');
+        expect(zeroPad('-01.00400', 1, 4, true)).toBe('-1.0040');
+        expect(zeroPad('-01.00400', 1, 4, false)).toBe('-1.0040');
+        expect(zeroPad('+01.00400', 2, 2, true)).toBe('+01.004');
+        expect(zeroPad('+01.00400', 2, 2, false)).toBe('01.004');
+        expect(zeroPad(-47.8, 3, 2)).toBe('-047.80');
+        expect(zeroPad(47.8, 3, 2)).toBe('047.80');
+        expect(zeroPad('+47.8', 3, 2)).toBe('+047.80');
+        expect(zeroPad(47.8, 3, 2, true)).toBe('+047.80');
+    });
 });

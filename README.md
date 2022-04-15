@@ -1,5 +1,5 @@
 # **number-slayer**
-![npm](https://img.shields.io/npm/v/number-slayer?color=%239f9f9f&style=flat-square)
+![npm](https://img.shields.io/npm/v/number-slayer?color=%23b8860b&style=flat-square)
 ![license](https://img.shields.io/npm/l/number-slayer?color=red&style=flat-square)
 ![tests](https://img.shields.io/badge/tests-100%25-green?style=flat-square)
 ![types](https://img.shields.io/npm/types/number-slayer?style=flat-square)
@@ -227,6 +227,14 @@ also returns non-numeric values as they are without returning `NaN` stuff or thr
 
 pads a number with leading or trailing zeros of a specific length (can be used for both the integer and decimal parts).
 
+*arguments*:
+- `num` ***(required)*** number to be padded
+- `int` ***(optional)*** length of the desired string for the **integer part** of the number `(defaults to 2)`
+- `dec` ***(optional)*** length of the desired string for the **decimal part** of the number
+- `addSign` ***(optional)*** if true, the **positive sign** of the number will also be added to the beginning of the resulting string
+    + if the argument number is a positive signed number-string, the sign will be added to the beginning of the resulting string (default behavior)
+    + **NOTE**: the negative sign will be added regardless of the value of this argument
+
 ```ts
     import { zeroPad } from 'number-slayer';
     
@@ -234,6 +242,9 @@ pads a number with leading or trailing zeros of a specific length (can be used f
     console.log(zeroPad(1, 3)); // '001'
     console.log(zeroPad(1, 3, 2)); // '001.00'
     console.log(zeroPad(-47.8, 3, 2)); // '-047.80'
+    console.log(zeroPad('+47.8', 3, 2)); // '+047.80'
+    console.log(zeroPad(47.8, 3, 2)); // '047.80'
+    console.log(zeroPad(47.8, 3, 2, true)); // '+047.80'
 ```
 
 **[⬆ back to top](#quick-guide)**

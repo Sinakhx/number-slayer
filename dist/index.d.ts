@@ -108,8 +108,11 @@ declare const toPrecision: <T>(num: T, precision?: number | undefined) => number
  * @param num actual number to be padded with zeros
  * @param int length of the desired string for the integer part of the number (defaults to 2)
  * @param dec length of the desired string for the decimal part of the number
+ * @param addSign if true, the positive sign of the number will also be added to the beginning of the resulting string
+ * - if the argument number is a positive signed number-string, the sign will be added to the beginning of the resulting string (default behavior)
+ * - `NOTE`: the negative sign will be added regardless of the value of this argument
  * @returns a string representation of the number with beggining &/or ending zeros
  */
-declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined) => string;
+declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined, addSign?: boolean | undefined) => string;
 
 export { addCommasToNumber, bin, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, int, isBigNumber, isNumber, modulus, randomInt, range, rollDice, rollMultipleDices, roundThousands, toFaPercent, toPrecision, zeroPad };
