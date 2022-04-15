@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/Sinakhx/number-slayer/compare/v1.1.0...v1.2.0) (2022-04-15)
+
+
+### Features
+
+* **enhance:** zeroPad with the 'addSign' optional arg ([2a229cf](https://github.com/Sinakhx/number-slayer/commit/2a229cf808df7ab373dfc97966c2a8d193142b15))
+
+
+### Bug Fixes
+
+* **zeroPad:** empty decimals & redundant int zeros ([efb3a76](https://github.com/Sinakhx/number-slayer/commit/efb3a7610ca571947322e934b079682b243d58be))
+
 ## [1.1.0](https://github.com/Sinakhx/number-slayer/compare/v1.0.3...v1.1.0) (2022-04-14)
 
 ### [1.0.3](https://github.com/Sinakhx/number-slayer/compare/v1.0.2...v1.0.3) (2022-04-14)
