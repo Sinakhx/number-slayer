@@ -4,10 +4,14 @@
  * @returns an array of [integer, decimal]
  */
 export const split = (num: number) => {
-    const abs = Math.abs(num);
-    const sign = Math.sign(num);
-    const floor = Math.floor(abs);
-    const int = floor * sign || 0;
-    const float = (abs - floor) * sign || 0;
-    return [int, float];
+    const numStr = +num + '';
+    const sign = numStr[0] === '-' ? '-' : '';
+    let [int, dec] = numStr.split('.');
+    if (+int < 1 && +int > -1 && +int !== 0) {
+        dec = int;
+        int = '0';
+    } else {
+        dec = sign + '0.' + dec;
+    }
+    return [int, dec].map((x) => +x || 0);
 };
