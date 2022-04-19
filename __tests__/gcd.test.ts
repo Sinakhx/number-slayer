@@ -28,6 +28,7 @@ describe('gcd', () => {
         expect(gcd(12, 16, 18)).toBe(2);
         expect(gcd(12, 16, 28)).toBe(4);
         expect(gcd(12, 16, 28, 18)).toBe(2);
+        expect(gcd(12, 18, 36)).toBe(6);
         expect(gcd(21, 56, 63, 91)).toBe(7);
         expect(gcd(21, 56, 63, 91, 12)).toBe(1);
         expect(gcd(57, 247, 323, 551, 0)).toBe(19);

@@ -10,6 +10,7 @@ describe('split', () => {
         expect(split(-1.0)).toEqual([-1, 0]);
         expect(split(-1.25)).toEqual([-1, -0.25]);
         expect(split(-1.00075)).toEqual([-1, -0.00075]);
+        expect(split(1.23456789)).toEqual([1, 0.23456789]);
         expect(split(-489265.100756)).toEqual([-489265, -0.100756]);
         const num1 = 0.0000000000000003;
         expect(split(num1)).toEqual([0, num1]);

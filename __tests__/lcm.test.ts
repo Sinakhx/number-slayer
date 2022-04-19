@@ -30,6 +30,7 @@ describe('lcm', () => {
         expect(lcm(15, 20)).toBe(60);
         expect(lcm(2, 3, 5)).toBe(30);
         expect(lcm(22, 33, 77)).toBe(462);
+        expect(lcm(12, 18, 36)).toBe(36);
         expect(lcm(2, 3, 5, -7)).toBe(210);
         expect(lcm(-95, -25, -55)).toBe(5225);
     });

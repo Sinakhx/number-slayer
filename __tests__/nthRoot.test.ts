@@ -7,6 +7,10 @@ describe('nthRoot', () => {
         expect(nthRoot(4, 2)).toBe(2);
         expect(nthRoot(4, 3)).toBeCloseTo(1.587401051968);
         expect(nthRoot(16, 4)).toBe(2);
+        expect(nthRoot(64, 3)).toBe(4);
+        expect(nthRoot(64, 2)).toBe(8);
+        expect(nthRoot(2, 2)).toBe(Math.sqrt(2));
+        expect(nthRoot(2, 3)).toBe(Math.cbrt(2));
         expect(nthRoot(7 * 7 * 7 * 7 * 7 * 7, 3)).toBeCloseTo(49);
         expect(nthRoot(7 * 7 * 7 * 7 * 7 * 7, 6)).toBe(7);
         expect(nthRoot(7 * 7 * 7 * 7 * 7, 5)).toBe(7);
