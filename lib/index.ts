@@ -15,6 +15,7 @@ export * from './persianHelper';
 export * from './randomInt';
 export * from './range';
 export * from './rollDice';
+export * from './roundFloat';
 export * from './roundThousands';
 export * from './split';
 export * from './toPrecision';

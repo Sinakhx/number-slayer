@@ -128,6 +128,15 @@ declare const rollMultipleDices: (count?: number) => number[];
 declare type Format = 'round' | 'floor' | 'ceil';
 
 /**
+ * rounds a float to a specified number of decimal places
+ * @param num number to round to specified decimal places
+ * @param precision number of decimal places to round to (default: 14)
+ * @param format "round" | "floor" | "ceil" (default: "round")
+ * @returns rounded number
+ */
+declare const roundFloat: (num: number, precision?: number, format?: Format) => number;
+
+/**
  * rounds a real number to a certain multiple of 10
  * @param num number to be rounded
  * @param precision number of digits from left not to be rounded (default: 1)
@@ -163,4 +172,4 @@ declare const toPrecision: <T>(num: T, precision?: number | undefined) => number
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined, addSign?: boolean | undefined) => string;
 
-export { addCommasToNumber, avoidMinusZero, bin, countFloatDigits, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, gcd, int, isBigNumber, isFloat, isNumber, lcm, modulus, nthRoot, randomInt, range, rollDice, rollMultipleDices, roundThousands, split, toFaPercent, toPrecision, zeroPad };
+export { addCommasToNumber, avoidMinusZero, bin, countFloatDigits, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, gcd, int, isBigNumber, isFloat, isNumber, lcm, modulus, nthRoot, randomInt, range, rollDice, rollMultipleDices, roundFloat, roundThousands, split, toFaPercent, toPrecision, zeroPad };
