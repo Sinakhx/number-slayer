@@ -1,4 +1,5 @@
 export * from './addCommasToNumber';
+export * from './avoidMinusZero';
 export * from './binary';
 export * from './countIntDigits';
 export * from './countWithZeros';

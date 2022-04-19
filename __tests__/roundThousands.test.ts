@@ -1,4 +1,4 @@
-import { roundThousands } from '../lib/roundThousands';
+import { roundThousands } from '../lib';
 
 describe('roundThousands', () => {
     it('should round a big number to a certain multiple of 10', () => {

@@ -1,4 +1,4 @@
-import { isBigNumber } from '../lib/isBigNumber';
+import { isBigNumber } from '../lib';
 
 describe('isBigNumber', () => {
     it('should return true if the number is out of +-MAX_SAFE_INTEGER bounds', () => {

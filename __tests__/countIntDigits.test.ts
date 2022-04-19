@@ -1,4 +1,4 @@
-import { countIntDigits } from '../lib/countIntDigits';
+import { countIntDigits } from '../lib';
 
 describe('countIntDigits', () => {
     it('should return the number of digits in the integer part of a number', () => {

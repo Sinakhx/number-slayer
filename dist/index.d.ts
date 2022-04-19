@@ -7,6 +7,12 @@
 declare const addCommasToNumber: (number: number | string, delimiter?: string) => string;
 
 /**
+ * converts -0 to 0
+ * @param num
+ */
+declare const avoidMinusZero: (num: number) => number;
+
+/**
  * converts an integer number to binary
  * @param bin binary string of a number to be converted to integer
  * @returns integer value of the binary string
@@ -86,6 +92,7 @@ declare const rollDice: () => number;
 declare const rollMultipleDices: (count?: number) => number[];
 
 declare type Format = 'round' | 'floor' | 'ceil';
+
 /**
  * rounds a real number to a certain multiple of 10
  * @param num number to be rounded
@@ -115,4 +122,4 @@ declare const toPrecision: <T>(num: T, precision?: number | undefined) => number
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined, addSign?: boolean | undefined) => string;
 
-export { addCommasToNumber, bin, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, int, isBigNumber, isNumber, modulus, randomInt, range, rollDice, rollMultipleDices, roundThousands, toFaPercent, toPrecision, zeroPad };
+export { addCommasToNumber, avoidMinusZero, bin, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, int, isBigNumber, isNumber, modulus, randomInt, range, rollDice, rollMultipleDices, roundThousands, toFaPercent, toPrecision, zeroPad };

@@ -1,6 +1,5 @@
 import { countIntDigits } from './countIntDigits';
-
-type Format = 'round' | 'floor' | 'ceil';
+import type { Format } from './types';
 
 /**
  * rounds a real number to a certain multiple of 10
