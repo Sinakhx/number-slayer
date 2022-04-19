@@ -8,25 +8,27 @@
 ## **At a glance**
 ```js
     range(7, 22, 3)                   // -->   [7, 10, 13, 16, 19]
-    toPrecision(3.141592653589793, 3) // -->   3.142
-    zeroPad(4, 2, 3)                  // -->   '04.000'
-    randomInt(79, 83)                 // -->   82
     addCommasToNumber(-43000000.25)   // -->   '-43,000,000.25'
     roundThousands(27743000.21)       // -->   30000000
+    zeroPad(4, 2, 3)                  // -->   '04.000'
+    toPrecision(3.141592653589793, 3) // -->   3.142
+    randomInt(79, 83)                 // -->   82
     countIntDigits(123456789)         // -->   9
-    enToFaNumber(1234567890)          // -->   '۱۲۳۴۵۶۷۸۹۰'
     isNumber(98.3)                    // -->   true
     modulus(-5, 3)                    // -->   1
-    toFaPercent(47)                   // -->   '٪ ۴۷'
+    nthRoot(8, 3)                     // -->   2
+    gcd(12, 18)                       // -->   6
     bin(-36)                          // -->   '-0b100100'
     int('-0b100100')                  // -->   -36
+    enToFaNumber(1234567890)          // -->   '۱۲۳۴۵۶۷۸۹۰'
+    toFaPercent(47)                   // -->   '٪ ۴۷'
     // ...
 ```
 
 
 ## **About**
 
-This is a very tiny tree-shakable number-utilities library designed for TypeScript and JavaScript projects. It is a collection of functions that are used to perform common daily tasks with numbers, including numbers generation (both random and non-random), rounding to a specific number of decimal places, converting numbers to formatted strings, etc.
+This is a very tiny tree-shakable number-utilities library designed for JavaScript/TypeScript projects. It is a collection of functions that are used to perform common daily tasks with numbers, including numbers generation (both random and non-random), rounding to a specific number of decimal places, converting numbers to formatted strings, etc.
 
 ### **number-slayer**:
 - has no dependencies
@@ -56,166 +58,44 @@ This is a very tiny tree-shakable number-utilities library designed for TypeScri
 ```
 
 ## **Quick Guide**
-- [addCommasToNumber](#addcommastonumber) - seperates a number by every 3 digits
-- [avoidMinusZero](#avoidminuszero) - converts negative zero to zero
-- [countFloatDigits](#countfloatdigits) - returns the number of digits in the decimal part of a number
-- [countIntDigits](#countintdigits) - returns the number of digits in the integer part of a number
-- [countWithZeros](#countwithzeros) - returns 1 if the argument is number or truthy
-- [gcd](#gcd) - returns the greatest common divisor of two or more numbers
-- [lcm](#lcm) - returns the least common multiple of two or more numbers
-- [isBigNumber](#isbignumber) - returns true if the argument number out of the bounds of +-Number.MAX_SAFE_INTEGER
-- [isNumber](#isnumber) - returns true if the argument is a real number
-- [modulus](#modulus) - returns the positive remainder of a division
-- [randomInt](#randomint) - returns a random integer between (& including) two numbers
-- [range](#range) - creates a list of numbers from a start to an end with a step
-- [roundThousands](#roundthousands) - rounds a real number to a certain multiple of 10
-- [toPrecision](#toprecision) - rounds a number to a specific number of decimal places
-- [zeroPad](#zeropad) - pads a number with leading or trailing zeros of a specific length
-- ***Binary conversion utils***
+- ***[General utils](#⚙️-general-utils)***
+    + [randomInt](#randomint) - returns a random integer between (& including) two numbers
+    + [range](#range) - creates a list of numbers from a start to an end with a step
+    + [split](#split) - splits a float number into integer and decimal parts
+- ***[Counting utils](#⚙️-counting-utils)***
+    + [countFloatDigits](#countfloatdigits) - returns the number of digits in the decimal part of a number
+    + [countIntDigits](#countintdigits) - returns the number of digits in the integer part of a number
+    + [countWithZeros](#countwithzeros) - returns 1 if the argument is number or truthy
+- ***[Transformation utils](#⚙️-transformation-utils)***
+    + [addCommasToNumber](#addcommastonumber) - seperates a number by every 3 digits
+    + [avoidMinusZero](#avoidminuszero) - converts negative zero to zero
+    + [roundFloat](#roundfloat) - rounds a real number to a certain number of decimal places
+    + [roundThousands](#roundthousands) - rounds a real number to a certain multiple of 10
+    + [toPrecision](#toprecision) - rounds a number to a specific number of decimal places
+    + [zeroPad](#zeropad) - pads a number with leading or trailing zeros of a specific length
+- ***[Validation utils](#⚙️-validation-utils)***
+    + [isNumber](#isnumber) - returns true if the argument is a real number
+    + [isBigNumber](#isbignumber) - returns true if the argument number out of the bounds of +-Number.MAX_SAFE_INTEGER
+    + [isFloat](#isfloat) - returns true if the argument is a float number
+- ***[Mathematical utils](#⚙️-mathematical-utils)***
+    + [modulus](#modulus) - returns the positive remainder of a division
+    + [nthRoot](#nthroot) - returns the nth root of a number
+    + [gcd](#gcd) - returns the greatest common divisor of two or more numbers
+    + [lcm](#lcm) - returns the least common multiple of two or more numbers
+- ***[Binary conversion utils](#⚙️-binary-conversion-utils)***
     + [int](#int) - converts a binary number to integer
     + [bin](#bin) - converts an integer number to binary
-- ***Persian language helper utils*** - number helper utils for the Persian language
+- ***[Persian language helper utils](#⚙️-persian-language-helper-utils)*** - number helper utils for the Persian language
     + [faToEnNumber](#fatoennumber) - converts a Persian number to English `(e.g. '۱۲۳' to '123')`
     + [enToFaNumber](#entofanumber) - converts an English number to Persian `(e.g. '123' to '۱۲۳')`
     + [toFaPercent](#tofapercent) - converts a number to Persian percent `(e.g. '50' to '٪ ۵۰')`
-- ***Fun utils***
+- ***[Fun utils](#⚙️-fun-utils)***
     + [rollDice](#rolldice) - returns a random dice number 🎲
     + [rollMultipleDices](#rollmultipledices) - returns a series of random dice numbers 🎲🎲🎲🎲
 
 ## Detailed Examples
 
-### **addCommasToNumber**
-
-seperates the integer part of a number with commas every three digits. the delimiter can be defined as a custom string as well.
-
-```ts
-    import { addCommasToNumber } from 'number-slayer';
-
-    const n1 = addCommasToNumber(1234567890)    // -> "1,234,567,890"
-    const n2 = addCommasToNumber(-5589.43, "'") // -> "-5'589.43"
-```
-
-**[⬆ back to top](#quick-guide)**
-
-### **countFloatDigits**
-
-returns the number of decimal places in a float number.
-
-```ts
-    import { countFloatDigits } from 'number-slayer';
-
-    countFloatDigits(-43.156) // -> 3
-```
-
-**[⬆ back to top](#quick-guide)**
-
-### **avoidMinusZero**
-
-converts -0 to 0, else returns the non-zero number.
-
-```ts
-    import { avoidMinusZero } from 'number-slayer';
-
-    const n1 = avoidMinusZero(0)    // -> 0
-    const n2 = avoidMinusZero(-0)   // -> 0
-    const n3 = avoidMinusZero(1)    // -> 1
-    const n4 = avoidMinusZero(-1)   // -> -1
-```
-
-**[⬆ back to top](#quick-guide)**
-
-### **countIntDigits**
-
-returns the number of digits in the integer part of a number
-
-```ts
-    import { countIntDigits } from 'number-slayer';
-
-    const ints = countIntDigits(-198989.999); // -> 6
-```
-
-**[⬆ back to top](#quick-guide)**
-
-### **gcd**
-
-returns the Greatest Common Divisor of the argument numbers
-
-```ts
-    import { gcd } from 'number-slayer';
-
-    const num = gcd(12, 18, 36) // -> 6
-```
-
-**[⬆ back to top](#quick-guide)**
-
-### **lcm**
-
-returns the Least Common Multiple of the argument numbers
-
-```ts
-    import { lcm } from 'number-slayer';
-
-    const num = lcm(12, 18, 36) // -> 36
-```
-
-**[⬆ back to top](#quick-guide)**
-
-### **countWithZeros**
-
-can be used as a callback function when trying to count digits and truthy values in an array (counts zero as well).
-the return value of this function is either 1 or 0;
-
-```ts
-    import { countWithZeros } from 'number-slayer';
-
-    const mixedArray = [null, undefined, 0, "0", 6, "345", "-12", ""];
-    const passList = mixedArray.filter(countWithZeros); // -> [0, "0", 6, "345", "-12"]
-    console.log(passList.length); // 5
-```
-
-**[⬆ back to top](#quick-guide)**
-
-### **isBigNumber**
-
-checks if the number is out of +-MAX_SAFE_INTEGER bounds. returns true if the argument number is too big for calculations.
-
-```ts
-    import { isBigNumber } from 'number-slayer';
-
-    isBigNumber(Number.MIN_SAFE_INTEGER - 1); // -> true
-    isBigNumber(9100000000000000);            // -> true
-```
-
-**[⬆ back to top](#quick-guide)**
-
-### **isNumber**
-
-checks if the given argument is a real number. returns true if the argument is a real number, false otherwise.
-
-```ts
-    import { isNumber } from 'number-slayer';
-
-    console.log(isNumber({})); // false
-    console.log(isNumber(-1.1)); // true
-    console.log(isNumber(undefined)); // false
-    console.log(isNumber(1 / Math.sqrt(Math.PI))); // true
-```
-
-**[⬆ back to top](#quick-guide)**
-
-### **modulus**
-
-returns the positive remainder of a division, no matter the sign of the dividend.
-
-```ts
-    import { modulus } from 'number-slayer';
-
-    const simpleModulus = -5 % 3;                // -> -2
-    const numberSlayerModulus = modulus(-5, 3);  // ->  1
-    // 1 is the same as -2 + 3
-```
-
-**[⬆ back to top](#quick-guide)**
+### ⚙️ *General utils*
 
 ### **randomInt**
 
@@ -239,6 +119,106 @@ creates an array of numbers from the starting number up to the ending number (ex
 
     const numbers = range(3, 10);     //-> [3, 4, 5, 6, 7, 8, 9]
     const numbers2 = range(25, 32, 2); //-> [25, 27, 29, 31]
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **split**
+
+splits a float into a whole number and a fractional part (sum of the two parts is equal to the original number). returns an array with the two parts.
+
+```ts
+    import { split } from 'number-slayer';
+
+    const num = split(1.23456789); // -> [1, 0.23456789]
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### ⚙️ *Counting utils*
+
+### **countFloatDigits**
+
+returns the number of decimal places in a float number.
+
+```ts
+    import { countFloatDigits } from 'number-slayer';
+
+    countFloatDigits(-43.156) // -> 3
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **countIntDigits**
+
+returns the number of digits in the integer part of a number
+
+```ts
+    import { countIntDigits } from 'number-slayer';
+
+    const ints = countIntDigits(-198989.999); // -> 6
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **countWithZeros**
+
+can be used as a callback function when trying to count digits and truthy values in an array (counts zero as well).
+the return value of this function is either 1 or 0;
+
+```ts
+    import { countWithZeros } from 'number-slayer';
+
+    const mixedArray = [null, undefined, 0, "0", 6, "345", "-12", ""];
+    const passList = mixedArray.filter(countWithZeros); // -> [0, "0", 6, "345", "-12"]
+    console.log(passList.length); // 5
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### ⚙️ *Transformation utils*
+
+### **addCommasToNumber**
+
+seperates the integer part of a number with commas every three digits. the delimiter can be defined as a custom string as well.
+
+```ts
+    import { addCommasToNumber } from 'number-slayer';
+
+    const n1 = addCommasToNumber(1234567890)    // -> "1,234,567,890"
+    const n2 = addCommasToNumber(-5589.43, "'") // -> "-5'589.43"
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **avoidMinusZero**
+
+converts -0 to 0, else returns the non-zero number.
+
+```ts
+    import { avoidMinusZero } from 'number-slayer';
+
+    const n1 = avoidMinusZero(0)    // -> 0
+    const n2 = avoidMinusZero(-0)   // -> 0
+    const n3 = avoidMinusZero(1)    // -> 1
+    const n4 = avoidMinusZero(-1)   // -> -1
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **roundFloat**
+
+rounds a float number to the given number of decimal places.
+it takes three arguements:
+ - `num` ***(required)*** number to be rounded
+ - `precision` ***(optional. default: 14)*** number of decimal digits from right not to be rounded/floored/ceild
+ - `format` ***(optional. default: "round")*** number-cutting strategy. can be: `"round" | "floor" | "ceil"
+
+```ts
+    import { roundFloat } from 'number-slayer';
+
+    roundFloat(1.23456789, 3); // -> 1.235
+    roundFloat(1.23456789, 2, "floor"); // -> 1.23
 ```
 
 **[⬆ back to top](#quick-guide)**
@@ -303,7 +283,106 @@ pads a number with leading or trailing zeros of a specific length (can be used f
 
 **[⬆ back to top](#quick-guide)**
 
-### Binary conversion utils
+### ⚙️ *Validation utils*
+
+### **isNumber**
+
+checks if the given argument is a real number. returns true if the argument is a real number, false otherwise.
+
+```ts
+    import { isNumber } from 'number-slayer';
+
+    console.log(isNumber({})); // false
+    console.log(isNumber(-1.1)); // true
+    console.log(isNumber(undefined)); // false
+    console.log(isNumber(1 / Math.sqrt(Math.PI))); // true
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **isBigNumber**
+
+checks if the number is out of +-MAX_SAFE_INTEGER bounds. returns true if the argument number is too big for calculations.
+
+```ts
+    import { isBigNumber } from 'number-slayer';
+
+    isBigNumber(Number.MIN_SAFE_INTEGER - 1); // -> true
+    isBigNumber(9100000000000000);            // -> true
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **isFloat**
+
+checks if the given argument is a float number. returns true if the argument is a float number, false otherwise.
+
+```ts
+    import { isFloat } from 'number-slayer';
+
+    console.log(isFloat(-1.1)); // true
+    console.log(isFloat(12.0)); // false
+    console.log(isFloat(1 / Math.sqrt(Math.PI))); // true
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### ⚙️ *Mathematical utils*
+
+### **modulus**
+
+returns the positive remainder of a division, no matter the sign of the dividend.
+
+```ts
+    import { modulus } from 'number-slayer';
+
+    const simpleModulus = -5 % 3;                // -> -2
+    const numberSlayerModulus = modulus(-5, 3);  // ->  1
+    // 1 is the same as -2 + 3
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **nthRoot**
+
+returns the nth root of a number.
+- (e.g: 2nd root of a number is the square root of the number.)
+- (e.g: 3rd root of a number is the cube root of the number.)
+
+```ts
+    import { nthRoot } from 'number-slayer';
+
+    const num = nthRoot(64, 3); // -> 4
+    const num3 = nthRoot(2, 2); // -> 1.4142135623730951
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **gcd**
+
+returns the Greatest Common Divisor of the argument numbers
+
+```ts
+    import { gcd } from 'number-slayer';
+
+    const num = gcd(12, 18, 36) // -> 6
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **lcm**
+
+returns the Least Common Multiple of the argument numbers
+
+```ts
+    import { lcm } from 'number-slayer';
+
+    const num = lcm(12, 18, 36) // -> 36
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### ⚙️ *Binary conversion utils*
 
 ### **int**
 
@@ -323,7 +402,7 @@ converts an integer number to binary (the result will always start with the pref
 
 **[⬆ back to top](#quick-guide)**
 
-### Persian language helper utils
+### ⚙️ *Persian language helper utils*
 
 ### **faToEnNumber**
 converts a Persian number to English (ignores non-numeric characters).
@@ -360,8 +439,7 @@ converts a number to Persian percent.
 
 **[⬆ back to top](#quick-guide)**
 
-
-### Fun utils
+### ⚙️ *Fun utils*
 
 ### **rollDice**
 
@@ -399,4 +477,3 @@ The [MIT License][license-url] (MIT)
 [contribution-url]:  https://github.com/Sinakhx/number-slayer/blob/main/CONTRIBUTING.md
 [changelog-url]:  https://github.com/Sinakhx/number-slayer/blob/main/CHANGELOG.md
 [license-url]:  https://github.com/Sinakhx/number-slayer/blob/main/LICENSE
-
