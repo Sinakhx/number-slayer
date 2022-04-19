@@ -26,6 +26,13 @@ declare const int: (bin: string) => number;
 declare const bin: (num: number) => string;
 
 /**
+ * Counts the number of decimal places in a float.
+ * @param num number to count floating point digits of
+ * @returns number of floating point digits in num
+ */
+declare const countFloatDigits: (num: number) => number;
+
+/**
  * returns the number of digits in the integer part of a number
  * @param num the number to count the digits of
  */
@@ -122,4 +129,4 @@ declare const toPrecision: <T>(num: T, precision?: number | undefined) => number
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined, addSign?: boolean | undefined) => string;
 
-export { addCommasToNumber, avoidMinusZero, bin, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, int, isBigNumber, isNumber, modulus, randomInt, range, rollDice, rollMultipleDices, roundThousands, toFaPercent, toPrecision, zeroPad };
+export { addCommasToNumber, avoidMinusZero, bin, countFloatDigits, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, int, isBigNumber, isNumber, modulus, randomInt, range, rollDice, rollMultipleDices, roundThousands, toFaPercent, toPrecision, zeroPad };

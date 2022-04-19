@@ -1,6 +1,7 @@
 export * from './addCommasToNumber';
 export * from './avoidMinusZero';
 export * from './binary';
+export * from './countFloatDigits';
 export * from './countIntDigits';
 export * from './countWithZeros';
 export * from './isBigNumber';
