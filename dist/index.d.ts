@@ -61,6 +61,12 @@ declare const gcd: (...numbers: number[]) => number;
 declare const isBigNumber: (num: number) => boolean;
 
 /**
+ * returns true if num is a float
+ * @param num number to be checked
+ */
+declare const isFloat: (num: number) => boolean;
+
+/**
  * Checks if the given value is a real number. Supports Number object.
  * @param val - value to check
  * @returns true if value is a real number
@@ -150,4 +156,4 @@ declare const toPrecision: <T>(num: T, precision?: number | undefined) => number
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined, addSign?: boolean | undefined) => string;
 
-export { addCommasToNumber, avoidMinusZero, bin, countFloatDigits, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, gcd, int, isBigNumber, isNumber, lcm, modulus, randomInt, range, rollDice, rollMultipleDices, roundThousands, split, toFaPercent, toPrecision, zeroPad };
+export { addCommasToNumber, avoidMinusZero, bin, countFloatDigits, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, gcd, int, isBigNumber, isFloat, isNumber, lcm, modulus, randomInt, range, rollDice, rollMultipleDices, roundThousands, split, toFaPercent, toPrecision, zeroPad };

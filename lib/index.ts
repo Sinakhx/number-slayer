@@ -6,6 +6,7 @@ export * from './countIntDigits';
 export * from './countWithZeros';
 export * from './gcd';
 export * from './isBigNumber';
+export * from './isFloat';
 export * from './isNumber';
 export * from './lcm';
 export * from './modulus';
