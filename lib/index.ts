@@ -10,6 +10,7 @@ export * from './isFloat';
 export * from './isNumber';
 export * from './lcm';
 export * from './modulus';
+export * from './nthRoot';
 export * from './persianHelper';
 export * from './randomInt';
 export * from './range';

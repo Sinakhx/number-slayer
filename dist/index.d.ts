@@ -88,6 +88,13 @@ declare const lcm: (...numbers: number[]) => number;
  */
 declare const modulus: (dividend: number, divisor: number) => number;
 
+/**
+ * returns the nth root of a number
+ * @param num number to take nth root of
+ * @param root nth root to take
+ */
+declare const nthRoot: (num: number, root: number) => number;
+
 declare const enToFaNumber: (num: number | string) => string;
 declare const faToEnNumber: (num: number | string) => string;
 declare const toFaPercent: (number: number | string) => string;
@@ -156,4 +163,4 @@ declare const toPrecision: <T>(num: T, precision?: number | undefined) => number
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined, addSign?: boolean | undefined) => string;
 
-export { addCommasToNumber, avoidMinusZero, bin, countFloatDigits, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, gcd, int, isBigNumber, isFloat, isNumber, lcm, modulus, randomInt, range, rollDice, rollMultipleDices, roundThousands, split, toFaPercent, toPrecision, zeroPad };
+export { addCommasToNumber, avoidMinusZero, bin, countFloatDigits, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, gcd, int, isBigNumber, isFloat, isNumber, lcm, modulus, nthRoot, randomInt, range, rollDice, rollMultipleDices, roundThousands, split, toFaPercent, toPrecision, zeroPad };
