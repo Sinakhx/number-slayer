@@ -10,6 +10,8 @@ describe('roundFloat', () => {
         expect(roundFloat(3.1415, 3)).toBe(3.142);
         expect(roundFloat(3.1415, 2)).toBe(3.14);
         expect(roundFloat(3.1415, 1)).toBe(3.1);
+        expect(roundFloat(1.23456789, 3)).toBe(1.235);
+        expect(roundFloat(-1.23456789, 5)).toBe(-1.23457);
         expect(roundFloat(-4897.000141265, 6)).toBe(-4897.000141);
     });
 

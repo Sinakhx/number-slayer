@@ -11,5 +11,5 @@ import type { Format } from './types';
 export const roundFloat = (num: number, precision: number = 14, format: Format = 'round') => {
     const [int, float] = split(num);
     const coeff = 10 ** precision;
-    return int + Math[format](float * coeff) / coeff;
+    return Math[format]((int + Math[format](float * coeff) / coeff) * coeff) / coeff;
 };
