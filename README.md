@@ -57,8 +57,12 @@ This is a very tiny tree-shakable number-utilities library designed for TypeScri
 
 ## **Quick Guide**
 - [addCommasToNumber](#addcommastonumber) - seperates a number by every 3 digits
+- [avoidMinusZero](#avoidminuszero) - converts negative zero to zero
+- [countFloatDigits](#countfloatdigits) - returns the number of digits in the decimal part of a number
 - [countIntDigits](#countintdigits) - returns the number of digits in the integer part of a number
 - [countWithZeros](#countwithzeros) - returns 1 if the argument is number or truthy
+- [gcd](#gcd) - returns the greatest common divisor of two or more numbers
+- [lcm](#lcm) - returns the least common multiple of two or more numbers
 - [isBigNumber](#isbignumber) - returns true if the argument number out of the bounds of +-Number.MAX_SAFE_INTEGER
 - [isNumber](#isnumber) - returns true if the argument is a real number
 - [modulus](#modulus) - returns the positive remainder of a division
@@ -93,6 +97,33 @@ seperates the integer part of a number with commas every three digits. the delim
 
 **[⬆ back to top](#quick-guide)**
 
+### **countFloatDigits**
+
+returns the number of decimal places in a float number.
+
+```ts
+    import { countFloatDigits } from 'number-slayer';
+
+    countFloatDigits(-43.156) // -> 3
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **avoidMinusZero**
+
+converts -0 to 0, else returns the non-zero number.
+
+```ts
+    import { avoidMinusZero } from 'number-slayer';
+
+    const n1 = avoidMinusZero(0)    // -> 0
+    const n2 = avoidMinusZero(-0)   // -> 0
+    const n3 = avoidMinusZero(1)    // -> 1
+    const n4 = avoidMinusZero(-1)   // -> -1
+```
+
+**[⬆ back to top](#quick-guide)**
+
 ### **countIntDigits**
 
 returns the number of digits in the integer part of a number
@@ -100,8 +131,31 @@ returns the number of digits in the integer part of a number
 ```ts
     import { countIntDigits } from 'number-slayer';
 
-    const n = countIntDigits(-198989.999);
-    console.log(n);   // -> 6
+    const ints = countIntDigits(-198989.999); // -> 6
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **gcd**
+
+returns the Greatest Common Divisor of the argument numbers
+
+```ts
+    import { gcd } from 'number-slayer';
+
+    const num = gcd(12, 18, 36) // -> 6
+```
+
+**[⬆ back to top](#quick-guide)**
+
+### **lcm**
+
+returns the Least Common Multiple of the argument numbers
+
+```ts
+    import { lcm } from 'number-slayer';
+
+    const num = lcm(12, 18, 36) // -> 36
 ```
 
 **[⬆ back to top](#quick-guide)**
@@ -345,3 +399,4 @@ The [MIT License][license-url] (MIT)
 [contribution-url]:  https://github.com/Sinakhx/number-slayer/blob/main/CONTRIBUTING.md
 [changelog-url]:  https://github.com/Sinakhx/number-slayer/blob/main/CHANGELOG.md
 [license-url]:  https://github.com/Sinakhx/number-slayer/blob/main/LICENSE
+
