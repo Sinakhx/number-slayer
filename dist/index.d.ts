@@ -124,6 +124,13 @@ declare type Format = 'round' | 'floor' | 'ceil';
 declare const roundThousands: (num: number, precision?: number, format?: Format) => number;
 
 /**
+ * splits a float into a whole number and a fractional part
+ * @param num number to split into integer and decimal parts
+ * @returns an array of [integer, decimal]
+ */
+declare const split: (num: number) => number[];
+
+/**
  * Rounds a number to the given precision decimals
  * @param num - number or numberString
  * @param precision - precision (decimals)
@@ -143,4 +150,4 @@ declare const toPrecision: <T>(num: T, precision?: number | undefined) => number
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined, addSign?: boolean | undefined) => string;
 
-export { addCommasToNumber, avoidMinusZero, bin, countFloatDigits, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, gcd, int, isBigNumber, isNumber, lcm, modulus, randomInt, range, rollDice, rollMultipleDices, roundThousands, toFaPercent, toPrecision, zeroPad };
+export { addCommasToNumber, avoidMinusZero, bin, countFloatDigits, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, gcd, int, isBigNumber, isNumber, lcm, modulus, randomInt, range, rollDice, rollMultipleDices, roundThousands, split, toFaPercent, toPrecision, zeroPad };

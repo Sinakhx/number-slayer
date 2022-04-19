@@ -14,5 +14,6 @@ export * from './randomInt';
 export * from './range';
 export * from './rollDice';
 export * from './roundThousands';
+export * from './split';
 export * from './toPrecision';
 export * from './zeroPad';
