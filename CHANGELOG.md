@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/Sinakhx/number-slayer/compare/v1.2.0...v2.0.0) (2022-04-19)
+
+
+### Features
+
+* avoidMinusZero ([2cb1091](https://github.com/Sinakhx/number-slayer/commit/2cb1091b2b14eeb71b97d80f869fcbe890bc2955))
+* countFloatDigits ([ae6598e](https://github.com/Sinakhx/number-slayer/commit/ae6598eefab3ba8c99a7fbd6bcf41a5c2bb970ab))
+* gcd (greatest common divisor) ([5309a4b](https://github.com/Sinakhx/number-slayer/commit/5309a4ba5ff757185e1f3a6818337261225e7696))
+* isFloat ([c34d839](https://github.com/Sinakhx/number-slayer/commit/c34d839f0da8264e173a6af88fff9c1a1065eb59))
+* lcm (least common multiple) ([55fc7e4](https://github.com/Sinakhx/number-slayer/commit/55fc7e485e32486dd7e6820a863bc01d9026821b))
+* nthRoot ([481ce5f](https://github.com/Sinakhx/number-slayer/commit/481ce5f850d2a3ca3e066205c832c8fdcc14fdc6))
+* roundFloat ([d36de68](https://github.com/Sinakhx/number-slayer/commit/d36de683aa2071dbfc0d53eaff1415651ea6e367))
+* split ([fcbb66d](https://github.com/Sinakhx/number-slayer/commit/fcbb66d98f5994177307a07d7327840d02a38602))
+
+
+### Documentation
+
+* avoidMinusZero, countFloatDigits, gcd, lcm ([7861846](https://github.com/Sinakhx/number-slayer/commit/7861846f81d65e73d2c63036f53b7947cfe5bf0c))
+* isFloat, nthRoot, roundFloat, split -- restructure docs ([e259e57](https://github.com/Sinakhx/number-slayer/commit/e259e57a552d585a0bc3034249b8a1ae7526425f))
+
 ## [1.2.0](https://github.com/Sinakhx/number-slayer/compare/v1.1.0...v1.2.0) (2022-04-15)
 
 
