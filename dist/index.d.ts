@@ -49,6 +49,7 @@ declare const countWithZeros: (input: unknown) => number;
 /**
  * returns the Greatest Common Divisor of the argument numbers
  * @param numbers numbers to find the greatest common divisor of
+ * - In mathematics, the greatest common divisor of two or more integers, which are not all zero, is the largest positive integer that divides each of the integers. --Wikipedia
  */
 declare const gcd: (...numbers: number[]) => number;
 
@@ -65,6 +66,13 @@ declare const isBigNumber: (num: number) => boolean;
  * @returns true if value is a real number
  */
 declare const isNumber: (val: any) => boolean;
+
+/**
+ * returns the Least Common Multiple of the argument numbers
+ * @param numbers numbers to find the least common multiple of
+ * - In arithmetic and number theory, the least common multiple of two integers a and b, is the smallest positive integer that is divisible by both a and b. --Wikipedia
+ */
+declare const lcm: (...numbers: number[]) => number;
 
 /**
  * returns positive remainders in modulus operations
@@ -135,4 +143,4 @@ declare const toPrecision: <T>(num: T, precision?: number | undefined) => number
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined, addSign?: boolean | undefined) => string;
 
-export { addCommasToNumber, avoidMinusZero, bin, countFloatDigits, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, gcd, int, isBigNumber, isNumber, modulus, randomInt, range, rollDice, rollMultipleDices, roundThousands, toFaPercent, toPrecision, zeroPad };
+export { addCommasToNumber, avoidMinusZero, bin, countFloatDigits, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, gcd, int, isBigNumber, isNumber, lcm, modulus, randomInt, range, rollDice, rollMultipleDices, roundThousands, toFaPercent, toPrecision, zeroPad };

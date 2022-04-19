@@ -7,6 +7,7 @@ export * from './countWithZeros';
 export * from './gcd';
 export * from './isBigNumber';
 export * from './isNumber';
+export * from './lcm';
 export * from './modulus';
 export * from './persianHelper';
 export * from './randomInt';
