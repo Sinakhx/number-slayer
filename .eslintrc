@@ -16,10 +16,15 @@
         "react/jsx-filename-extension": "off",
         "import/prefer-default-export": "off",
         "@typescript-eslint/indent": "off",
+        "class-methods-use-this": "off",
+        "no-underscore-dangle": "off",
+        "no-restricted-syntax": "off",
+        "no-param-reassign": "off",
         "prefer-template": "off",
+        "no-plusplus": "off",
         "no-bitwise": "off",
-        "no-tabs": "off",
         "max-len": "off",
+        "no-tabs": "off",
         "indent": "off"
     },
     "ignorePatterns": ["node_modules/", "dist/", "__tests__"]

@@ -47,6 +47,12 @@ declare const countIntDigits: (num: number) => number;
 declare const countWithZeros: (input: unknown) => number;
 
 /**
+ * returns the Greatest Common Divisor of the argument numbers
+ * @param numbers numbers to find the greatest common divisor of
+ */
+declare const gcd: (...numbers: number[]) => number;
+
+/**
  * checks if the number is out of +-MAX_SAFE_INTEGER bounds
  * @param num number
  * @returns true if the number is too big
@@ -129,4 +135,4 @@ declare const toPrecision: <T>(num: T, precision?: number | undefined) => number
  */
 declare const zeroPad: (num: number | string, int?: number, dec?: number | undefined, addSign?: boolean | undefined) => string;
 
-export { addCommasToNumber, avoidMinusZero, bin, countFloatDigits, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, int, isBigNumber, isNumber, modulus, randomInt, range, rollDice, rollMultipleDices, roundThousands, toFaPercent, toPrecision, zeroPad };
+export { addCommasToNumber, avoidMinusZero, bin, countFloatDigits, countIntDigits, countWithZeros, enToFaNumber, faToEnNumber, gcd, int, isBigNumber, isNumber, modulus, randomInt, range, rollDice, rollMultipleDices, roundThousands, toFaPercent, toPrecision, zeroPad };

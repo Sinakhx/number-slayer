@@ -4,6 +4,7 @@ export * from './binary';
 export * from './countFloatDigits';
 export * from './countIntDigits';
 export * from './countWithZeros';
+export * from './gcd';
 export * from './isBigNumber';
 export * from './isNumber';
 export * from './modulus';
