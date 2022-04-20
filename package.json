@@ -1,14 +1,27 @@
 {
     "name": "number-slayer",
     "version": "2.0.0",
-    "description": "js/ts number utilities",
+    "description": "JS/TS number utilities",
     "keywords": [
         "number-slayer",
         "fp",
         "number",
         "utility",
         "javascript",
-        "typescript"
+        "typescript",
+        "range",
+        "addCommasToNumber",
+        "zeroPad",
+        "nthRoot",
+        "gcd",
+        "greatest-common-divisor",
+        "lcm",
+        "least-common-multiple",
+        "persian-utils",
+        "binary",
+        "toPrecision",
+        "round",
+        "count"
     ],
     "homepage": "https://github.com/Sinakhx/number-slayer#readme",
     "bugs": {

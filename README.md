@@ -58,38 +58,38 @@ This is a very tiny tree-shakable number-utilities library designed for JavaScri
 ```
 
 ## **Quick Guide**
-- ***[General utils](#⚙️-general-utils)***
+- ***[General utils](#%EF%B8%8F-general-utils)***
     + [randomInt](#randomint) - returns a random integer between (& including) two numbers
     + [range](#range) - creates a list of numbers from a start to an end with a step
     + [split](#split) - splits a float number into integer and decimal parts
-- ***[Counting utils](#⚙️-counting-utils)***
+- ***[Counting utils](#%EF%B8%8F-counting-utils)***
     + [countFloatDigits](#countfloatdigits) - returns the number of digits in the decimal part of a number
     + [countIntDigits](#countintdigits) - returns the number of digits in the integer part of a number
     + [countWithZeros](#countwithzeros) - returns 1 if the argument is number or truthy
-- ***[Transformation utils](#⚙️-transformation-utils)***
+- ***[Transformation utils](#%EF%B8%8F-transformation-utils)***
     + [addCommasToNumber](#addcommastonumber) - seperates a number by every 3 digits
     + [avoidMinusZero](#avoidminuszero) - converts negative zero to zero
     + [roundFloat](#roundfloat) - rounds a real number to a certain number of decimal places
     + [roundThousands](#roundthousands) - rounds a real number to a certain multiple of 10
     + [toPrecision](#toprecision) - rounds a number to a specific number of decimal places
     + [zeroPad](#zeropad) - pads a number with leading or trailing zeros of a specific length
-- ***[Validation utils](#⚙️-validation-utils)***
+- ***[Validation utils](#%EF%B8%8F-validation-utils)***
     + [isNumber](#isnumber) - returns true if the argument is a real number
     + [isBigNumber](#isbignumber) - returns true if the argument number out of the bounds of +-Number.MAX_SAFE_INTEGER
     + [isFloat](#isfloat) - returns true if the argument is a float number
-- ***[Mathematical utils](#⚙️-mathematical-utils)***
+- ***[Mathematical utils](#%EF%B8%8F-mathematical-utils)***
     + [modulus](#modulus) - returns the positive remainder of a division
     + [nthRoot](#nthroot) - returns the nth root of a number
     + [gcd](#gcd) - returns the greatest common divisor of two or more numbers
     + [lcm](#lcm) - returns the least common multiple of two or more numbers
-- ***[Binary conversion utils](#⚙️-binary-conversion-utils)***
+- ***[Binary conversion utils](#%EF%B8%8F-binary-conversion-utils)***
     + [int](#int) - converts a binary number to integer
     + [bin](#bin) - converts an integer number to binary
-- ***[Persian language helper utils](#⚙️-persian-language-helper-utils)*** - number helper utils for the Persian language
+- ***[Persian language helper utils](#%EF%B8%8F-persian-language-helper-utils)*** - number helper utils for the Persian language
     + [faToEnNumber](#fatoennumber) - converts a Persian number to English `(e.g. '۱۲۳' to '123')`
     + [enToFaNumber](#entofanumber) - converts an English number to Persian `(e.g. '123' to '۱۲۳')`
     + [toFaPercent](#tofapercent) - converts a number to Persian percent `(e.g. '50' to '٪ ۵۰')`
-- ***[Fun utils](#⚙️-fun-utils)***
+- ***[Fun utils](#%EF%B8%8F-fun-utils)***
     + [rollDice](#rolldice) - returns a random dice number 🎲
     + [rollMultipleDices](#rollmultipledices) - returns a series of random dice numbers 🎲🎲🎲🎲
 
