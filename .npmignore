@@ -20,7 +20,6 @@ pnpm-lock.yaml
 package-lock.json
 
 # directories
-lib
 .vscode
 .husky
 .github
